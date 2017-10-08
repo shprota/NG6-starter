@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Roboto);
+//@import url(http://fonts.googleapis.com/css?family=Roboto);
 
 $primaryColor:   #0277bd;
 $accentColor:    #1de9b6;
@@ -9,10 +9,629 @@ $lightTextColor: #f5f5f5;
 $darkTextColor:  #212121;
 
 body {
-   height: 100%;
-   // browsers default to 16px for font-size,
-   // so setting top-level font-size to 62.5%
-   // scales 1rem to equal 10px.
-   font: 62.5% 'Roboto', sans-serif;
+	line-height: 1;
 }
 
+
+  /*RESET CSS*/
+  html, body, div, span, applet, object, iframe,
+  h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+  a, abbr, acronym, address, big, cite, code,
+  del, dfn, em, font, img, ins, kbd, q, s, samp,
+  small, strike, sub, sup, tt, var,
+  dl, dt, dd, ol, ul, li,
+  fieldset, form, label, legend,
+  table, caption, tbody, tfoot, thead, tr, th, td {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      outline: 0;
+      font-weight: inherit;
+      font-style: inherit;
+      font-size: 100%;
+      font-family: inherit;
+      vertical-align: baseline;
+  }
+  :focus {
+      outline: 0;
+  }
+
+
+  ol, ul {
+      list-style: none;
+  }
+  table {
+      border-collapse: collapse;
+      border-spacing: 0;
+  }
+  caption, th, td {
+      text-align: left;
+      font-weight: normal;
+  }
+  blockquote:before, blockquote:after,
+  q:before, q:after {
+      content: "";
+  }
+  blockquote, q {
+      quotes: "" "";
+  }
+  article, aside, audio, canvas, command, datalist, details, figcaption, figure, footer, header, hgroup, keygen, mark, menu, meter, nav, output, progress, rp, rt, ruby, section, source, summary, time, video, wbr, div {
+      display: block;
+      box-sizing: border-box;
+  }
+  .clear{
+      clear:both;
+      content:"";
+      display:block;
+      height:0;
+      font-size:0;
+      overflow: hidden;
+  }
+  strong {
+  font-weight: bold;
+  }
+  em {
+  font-style:italic;
+  }
+  img{
+      max-width: 100%;
+      box-sizing: border-box;
+  }
+
+  /*LAYOUT*/
+
+  .main{
+      width:1280px;
+      height:1024px;
+      margin:0 auto;
+      position: relative;
+      font-family: 'Open Sans';
+      h1 {
+          text-align: center;
+          color: #fff;
+          font-size: 30px;
+          padding: 5px 0;
+          margin-bottom: 60px;
+      }
+      h2 {
+          color: #fff;
+          font-size: 29px;
+          margin-bottom: 10px;
+      }
+
+  }
+  .home{
+      background: url('/images/backhome.png');
+      background-size: cover;
+  }
+  .lang{
+      background: url('/images/backlang.png');
+      background-size: cover;
+  }
+  .holiday{
+      background: url('/images/backholiday.png');
+      background-size: cover;
+  }
+  .hotels{
+      background: url('/images/backhotels.png');
+      background-size: cover;
+  }
+  .news{
+      background: url('/images/backnews.png');
+      background-size: cover;
+  }
+  .enjoying{
+      background: url('/images/backenjoying.png');
+      background-size: cover;
+  }
+  .contacts {
+      background: url('/images/backcontacts.png');
+      background-size: cover;
+      padding-top: 420px;
+      text-align: center;
+  }
+  .contacts p{
+      color: #fff;
+      font-size: 29px;
+      padding-bottom: 11px;
+  }
+  .home ul.top{
+      text-align: center;
+      padding: 227px 20px 0;
+  }
+  .home ul.top li,
+  .lang ul.top li{
+      display: inline-block;
+      vertical-align: top;
+      width: 24%;
+      position: relative;
+      margin-bottom: 55px;
+  }
+  ul.top li:before{
+      content: "";
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      display: block;
+      cursor:pointer;
+      margin: 0 auto 16px;
+      border: 1px solid #fff;
+      background-image: url('/images/sprites.png');
+  }
+  .home ul.top li:hover:before,
+  .small.nav li a:hover{
+      background-color: #0061a1;
+  }
+  .home ul.top li:after {
+      content: "";
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: block;
+      position: absolute;
+      top: 118px;
+      right: 45px;
+      background: #fff;
+      text-align: center;
+      color: #003369;
+      font-size: 36px;
+      font-weight: bold;
+      box-sizing: border-box;
+      padding-top: 14px;
+  }
+  .home ul.top li a,
+  .lang li a{
+      color: #fff;
+      font-size: 36px;
+      text-decoration: none;
+  }
+  .home ul.top li:nth-child(1) a{
+      padding: 0 70px;
+      text-align: center;
+      display: block;
+  }
+  .home ul.top li:nth-child(1):after{
+      content:"1";
+      background-position: 0 0;
+  }
+  .home ul.top li:nth-child(2):after{
+      content:"2";
+  }
+  .home ul.top li:nth-child(3):after{
+      content:"3";
+  }
+  .home ul.top li:nth-child(4):after{
+      content:"4";
+  }
+  .home ul.top li:nth-child(5):after{
+      content:"5";
+  }
+  .home ul.top li:nth-child(6):after{
+      content:"6";
+  }
+  .home ul.top li:nth-child(1):before{
+      background-position: 0 0;
+  }
+  .home ul.top li:nth-child(2):before{
+      background-position:-194px 0;
+  }
+  .home ul.top li:nth-child(3):before{
+      background-position: -401px 0;
+  }
+  .home ul.top li:nth-child(4):before{
+      background-position:-605px 0;
+  }
+  .home ul.top li:nth-child(5):before{
+      background-position:-792px 0;
+  }
+  .home ul.top li:nth-child(6):before{
+      background-position: -997px 0;
+  }
+  .small.nav{
+      padding: 0;
+      position: absolute;
+      bottom: 25px;
+      left: 30px;
+  }
+  .lang .small.nav{
+      position: relative;
+      padding: 25px 30px 0 0;
+  }
+  .lang .small.nav li.disabled a{
+      background-color: #002A66;
+  }
+  .small.nav li {
+      display: inline-block;
+      margin-right: 15px;
+  }
+  .small.nav li a{
+      width: 55px;
+      height: 55px;
+      padding: 0;
+      display: block;
+      border-radius: 50%;
+      background-color: transparent;
+      border: 1px solid #fff;
+      background-image: url('/images/sprites.png');
+  }
+  .small.nav li.earth a{
+      background-position:-19px -230px;
+  }
+  .small.nav li.disabled a{
+      background-position:-93px -229px;
+      position: relative;
+      z-index: 20;
+  }
+  .lang ul{
+      text-align: center;
+      padding:32px 90px 0;
+  }
+  ul.top li:before {
+      margin: 0 auto 20px;
+  }
+  .lang ul li:before{
+      background-color: rgba(255,255,255,.2);
+      background-image: url('/images/sprites.png');
+  }
+  .lang ul li:nth-child(1):before{
+      background-position:-195px -164px;
+  }
+  .lang ul li:nth-child(2):before{
+      background-position: -387px -164px;
+  }
+  .lang ul li:nth-child(3):before{
+      background-position:-598px -164px;
+  }
+  .lang ul li:nth-child(4):before{
+      background-position:-813px -164px;
+  }
+  .lang ul li:nth-child(2) a {
+      padding: 0 19px;
+      display: block;
+  }
+  .lang ul li:nth-child(1):hover:before{
+      background-color:#014398;
+  }
+  .lang ul li:nth-child(2):hover:before{
+      background-color:#024b90;
+  }
+  .lang ul li:nth-child(3):hover:before{
+      background-color:#004499;
+  }
+  .lang ul li:nth-child(4):hover:before{
+      background-color:#004ea5;
+  }
+  .lang .small.nav ul{
+      text-align: right;
+      padding: 28px 16px 0 0;
+      display: block;
+  }
+  .lang .small.nav li a:focus {
+      background-color: #39a1fc;
+  }
+  .small.nav li.disabled {
+      position:relative;
+  }
+  .lang .small.nav li.disabled ul {
+      display: none;
+      position: absolute;
+      width: 424px;
+      background: #fff;
+      border-radius: 6px;
+      padding: 0;
+      z-index: 10;
+      right: 38px;
+      top: 35px;
+      box-sizing: border-box;
+      overflow: hidden;
+  }
+  .lang .small.nav li.disabled:hover ul{
+      display: block;
+  }
+  .lang .small.nav li.disabled ul li{
+      width: 100%;
+      padding: 0 20px;
+      box-sizing: border-box;
+      margin: 0;
+  }
+  .lang .small.nav li.disabled ul li:hover{
+      background: #39a1fc;
+      margin-top: -1px;
+      padding-top: 1px;
+
+  }
+  .lang .small.nav li.disabled ul li a{
+      border:none;
+      border-bottom: 1px solid #d2d2d4;
+      display: block;
+      width: 100%;
+      height: auto;
+      text-align: right;
+      font-size:30px;
+      color: #000;
+      padding: 23px 0 21px;
+      box-sizing: border-box;
+      font-family: Tahoma, serif;
+      background: transparent;
+      border-radius: 0;
+  }
+  .lang .small.nav li.disabled ul li:hover a{
+      color:#fff;
+      font-weight: bold;
+      border-bottom: 1px solid transparent;
+  }
+  .lang .small.nav li.disabled a.close{
+      background-image: url(/images/sprites.png);
+      background-color: #39a1fc;
+      background-position: -1084px -234px;
+      width: 42px;
+      height: 42px;
+      position: absolute;
+      top: 18px;
+      left: 18px;
+  }
+  .lang .small.nav li.disabled ul li:nth-child(7) a{
+      border-bottom: none;
+  }
+  .small.nav li.home{
+      background: none;
+  }
+  .small.nav li.home a {
+      background-position: -97px -326px;
+  }
+  .small.nav li.back a {
+      background-position: -10px -326px;
+  }
+  .left,
+  .right{
+      float: left;
+      box-sizing: border-box;
+      padding: 15px;
+      height: 100%;
+  }
+  .left{
+      width: 400px;
+  }
+  .right{
+      width:880px;
+      padding-left: 0;
+      position: relative;
+  }
+  .define {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      border:1px solid #fff;
+      display: block;
+      position: relative;
+      background-image: url(/images/sprites.png);
+  }
+  .holiday .left .define,
+  .enjoying .left .define{
+      margin: -36px auto 0;
+  }
+  .holiday .left .define {
+      background-color: #e06e00;
+      background-position: 0 0;
+      background-size: 660% auto;
+  }
+  .enjoying .left .define{
+      background-color: #5094a4;
+      background-position:-295px -10px;
+      background-size: 794% auto;
+  }
+  .mark{
+      width: 32px;
+      height: 45px;
+      position: absolute;
+      background-size: 100% auto;
+  }
+  .mark.holidaymark{
+      background-image: url(/images/mark-holiday.png);
+  }
+  .mark01 {
+      top: 322px;
+      left: 261px;
+  }
+  .mark02 {
+      top: 516px;
+      left: 229px;
+  }
+  ul.leftmenu {
+      border-top: 1px solid #fff;
+      overflow: auto;
+  }
+  .leftmenu li{
+      border-bottom: 1px solid #fff;
+  }
+  .leftmenu li a{
+      text-decoration: none;
+      color: #fff;
+      text-align: center;
+      display: block;
+      padding: 25px 0 31px;
+      font-size: 30px;
+      position: relative;
+      z-index: 5;
+  }
+  .leftmenu li:hover{
+      background: rgba(0,0,0,.2);
+  }
+  .info{
+      width: 655px;
+      background: #e06e00;
+      position: absolute;
+      top: 150px;
+      left: 101px;
+  }
+  .infoinner{
+      padding: 9px 20px 50px;
+  }
+  .infoinner p{
+      color: #fff;
+      font-size: 12px;
+      line-height: 14px;
+      margin-bottom: 15px;
+  }
+  .info .images img{
+      display: inline-block;
+      margin: 10px 15px 0 0;
+      vertical-align: top;
+  }
+  .info .images img:last-child{
+      margin-right: 0;
+  }
+  .mark.enjoying{
+      background-image: url(/images/mark-enjoying.png);
+  }
+  .mark.enjoying.pink{
+      background-image: url(/images/mark-enjoying-pink.png);
+  }
+  .mark.holidaymark.pink{
+      background-image: url(/images/mark-holiday-pink.png);
+  }
+  .mark03 {
+      top: 381px;
+      left: 294px;
+  }
+  .mark04 {
+      top: 481px;
+      left: 294px;
+  }
+  .mark05 {
+      top: 535px;
+      left: 253px;
+  }
+  .mark06 {
+      top: 392px;
+      left: 316px;
+  }
+  .holiday2 .left .define,
+  .holiday2  .left h1,
+  .hotels .left .define,
+  .hotels  .left h1,
+  .news .left .define,
+  .news  .left h1{
+      margin: 0;
+      display: inline-block;
+      vertical-align: middle;
+  }
+  .holiday2 .left h1,
+  .hotels .left h1,
+  .news .left h1{
+      padding: 0 0 0 14px;
+      width: 64%;
+      text-align: left;
+      line-height: 37px;
+  }
+  .holiday2 .left ul.leftmenu,
+  .hotels .left ul.leftmenu,
+  .news .left ul.leftmenu{
+      margin-top: 22px;
+      height: 766px;
+      overflow: auto;
+      position: relative;
+  }
+  .holiday2 li a,
+  .hotels li a,
+  .news li a{
+      font-size: 19px;
+      position: relative;
+      z-index: 5;
+      display: inline-block;
+      vertical-align: middle;
+      width: 220px;
+      text-align: left;
+      padding: 25px 0;
+  }
+  .holiday2 li img,
+  .hotels li img,
+  .news li img{
+      display: inline-block;
+      margin: 7px 15px 7px 0;
+      position: relative;
+      z-index: 1;
+      vertical-align: middle;
+  }
+  .holiday2 li span.infomenu,
+  .hotels li span.infomenu,
+  .news li span.infomenu{
+      width: 30px;
+      height: 30px;
+      background-image: url(/images/sprites.png);
+      background-position: -185px -343px;
+      display: inline-block;
+      vertical-align: middle;
+  }
+  .hotels .define{
+      background-color: #007cc4;
+      background-position: -194px -28px;
+      background-size: 950%;
+  }
+  .news .define{
+      background-color: #f1505f;
+      background-position: -701px -27px;
+      background-size: 950%;
+  }
+  .mark.hotelsmark{
+      background-image: url(/images/mark-hotels.png);
+  }
+  .mark.hotelsmark.pink{
+      background-image: url(/images/mark-hotels-pink.png);
+  }
+  .mark07 {
+      top: 421px;
+      left: 295px;
+  }
+  .mark08 {
+      top: 512px;
+      left: 247px;
+  }
+  .mark09 {
+      top: 348px;
+      left: 290px;
+  }
+  span.white{
+      display: block;
+      width: 145px;
+      white-space: nowrap;
+      background: #fff;
+      color: #f1505f;
+      font-weight: bold;
+      font-size: 14px;
+      box-sizing: border-box;
+      padding: 5px;
+      text-align: center;
+      margin-bottom: 5px;
+  }
+  .news li a{
+      padding: 9px 0;
+  }
+  .news .right .inner {
+      background: #fff;
+      height: 100%;
+      box-sizing: border-box;
+      padding: 60px 45px 60px 60px;
+      overflow: auto;
+  }
+  .news .right .inner .date{
+      background: #f1505f;
+      color: #fff;
+      display: inline-block;
+      font-size: 29px;
+      padding: 4px 50px 8px;
+  }
+  .news .right .inner h2{
+      color: #f1505f;
+      padding: 15px 0 10px;
+      margin: 0;
+  }
+  .news .right .inner p{
+      margin-bottom: 17px;
+      font-size: 14px;
+      line-height: 18px;
+  }
+  div.nicescroll-rails {
+      right: auto!important;
+      left: 0;
+  }

@@ -1,4 +1,4 @@
-var path    = require('path');
+var path = require('path');
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
@@ -7,10 +7,16 @@ module.exports = {
   entry: {},
   module: {
     loaders: [
-       { test: /\.js$/, exclude: [/app\/lib/, /node_modules/], loader: 'ng-annotate!babel' },
-       { test: /\.html$/, loader: 'raw' },
-       { test: /\.(scss|sass)$/, loader: 'style!css!sass' },
-       { test: /\.css$/, loader: 'style!css' }
+      {test: /\.js$/, exclude: [/app\/lib/, /node_modules/], loader: 'ng-annotate!babel'},
+      {test: /\.html$/, loader: 'raw'},
+      {test: /\.(scss|sass)$/, loader: 'style!css!sass'},
+      {test: /\.css$/, loader: 'style!css'},
+      {test: /\.png$/, loader: 'raw'},
+      {test: /\.jpg/, loader: 'raw'},
+      {test: /\.woff/, loader: 'raw'},
+      {test: /\.svg/, loader: 'raw'},
+      {test: /\.ttf/, loader: 'raw'},
+      {test: /\.eot/, loader: 'raw'},
     ]
   },
   plugins: [
@@ -30,6 +36,21 @@ module.exports = {
       minChunks: function (module, count) {
         return module.resource && module.resource.indexOf(path.resolve(__dirname, 'client')) === -1;
       }
+    }),
+
+    new webpack.ProvidePlugin({
+      $: "jquery",
+      jQuery: "jquery",
+      niceScroll: "niceScroll",
+      ngNiceScroll: "ngNiceScroll"
     })
-  ]
+  ],
+  resolve: {
+    alias: {
+      jquery: "jquery/src/jquery",
+      niceScroll: 'nicescroll/jquery.nicescroll',
+      ngNiceScroll: 'angular-nicescroll/angular-nicescroll',
+    }
+  },
+
 };

@@ -5,8 +5,8 @@ class NewsService {
         this.$http = $http;
     }
 
-    loadNews() {
-      return this.$http.get("http://gn.shprota.com/?cat=66&json=1&lang=ru")
+    loadNews(lang) {
+      return this.$http.get("http://gn.shprota.com/?cat=66&json=1&lang="+lang)
         .then(resp => {
           console.log(resp);
           return resp.data;

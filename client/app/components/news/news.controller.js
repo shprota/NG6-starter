@@ -2,14 +2,15 @@ import '../../../css/bootstrap.css';
 import '../../../css/img-gallery.css';
 
 class NewsController {
-  constructor(newsService, $timeout) {
+  constructor(newsService, languageFactory, $timeout) {
     "ngInject";
     this.$timeout = $timeout;
     this.name = 'news';
     this.service = newsService;
+    this.lng = languageFactory;
     this.currentPost = "Loading...";
     this.posts = [];
-    this.service.loadNews()
+    this.service.loadNews(this.lng.getLanguage())
       .then(news => {
         console.log("News: ", news);
         this.currentPost = news.posts[0];

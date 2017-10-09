@@ -3,7 +3,7 @@ import uiRouter from 'angular-ui-router';
 import languageComponent from './language.component';
 
 let languageModule = angular.module('language', [
-  uiRouter
+  uiRouter,
 ])
 
 .config(($stateProvider, $urlRouterProvider) => {

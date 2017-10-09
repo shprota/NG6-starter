@@ -1,9 +1,44 @@
-<navbar></navbar>
-<header>
-  <hero></hero>
-</header>
-<main>
-  <div>
-    <h1>Found in {{ $ctrl.name }}.html</h1>
-  </div>
-</main>
+<div class="main home">
+    <ul class="top">
+        <li>
+            <a href="#" />
+                Active holiday
+            </a>
+        </li>
+        <li>
+            <a href="#" />
+                Hotels in Neyanya
+            </a>
+        </li>
+        <li>
+            <a href="#" />
+                Enjoying in Netanya
+            </a>
+        </li>
+        <li>
+            <a href="#" />
+                Surroundings
+            </a>
+        </li>
+        <li ng-click="$ctrl.$state.go('news')">
+            <a href="#"/>
+                Neyanya News & Events
+            </a>
+        </li>
+        <li>
+            <a href="#" />
+                Contact us
+            </a>
+        </li>
+    </ul>
+    <div class="small nav">
+        <ul>
+            <li class="earth">
+                <a href="#" /></a>
+            </li>
+            <li class="disabled">
+                <a href="#" /></a>
+            </li>
+        </ul>
+    </div>
+</div>

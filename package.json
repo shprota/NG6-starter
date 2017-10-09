@@ -4,12 +4,13 @@
   "description": "Starter for Angular + ES6 + (Webpack or JSPM)",
   "main": "index.js",
   "dependencies": {
+    "@uirouter/angularjs": "^1.0.0-beta.1",
     "angular": "^1.5.0",
-    "angular-nicescroll": "0.0.0",
+    "angular-nicescroll": "^0.0.0",
     "angular-sanitize": "^1.6.6",
-    "angular-ui-router": "^1.0.0-beta.1",
     "jquery": "^3.2.1",
-    "nicescroll": "^3.7.4",
+    "jquery.nicescroll": "^3.7.6",
+    "ngmap": "^1.18.4",
     "normalize.css": "^3.0.3"
   },
   "devDependencies": {

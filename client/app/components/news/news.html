@@ -5,7 +5,7 @@
         <h1>Netanya News & Events</h1>
         <ul id="leftmenu" class="leftmenu" ng-nicescroll nice-option="{touchbehavior:true, cursorcolor: '#c71f24'}">
             <li ng-repeat="post in $ctrl.posts track by $index" ng-click="$ctrl.setCurrentContent(post)">
-                <img src="" ng-src="{{post.thumbnail}}" width="93"/>
+                <img src="" ng-src="{{post.thumbnail}}"/>
               <a href="#" ><span class="white" ng-bind="post.custom_fields.hwe_date[0]"></span> <span ng-bind-html="post.title"></span></a>
                 <span class="infomenu"></span>
             </li>

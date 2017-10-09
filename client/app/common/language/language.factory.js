@@ -1,5 +1,5 @@
 let LanguageFactory = function () {
-  let language = 'he';
+  let language = 'ru';
 
   let getLanguage = () => {
     return language;

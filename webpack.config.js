@@ -48,8 +48,9 @@ module.exports = {
   resolve: {
     alias: {
       jquery: "jquery/src/jquery",
-      niceScroll: 'nicescroll/jquery.nicescroll',
+      niceScroll: 'jquery.nicescroll/jquery.nicescroll',
       ngNiceScroll: 'angular-nicescroll/angular-nicescroll',
+      ngMap: 'ngmap/build/scripts/ng-map'
     }
   },
 

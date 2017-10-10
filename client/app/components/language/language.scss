@@ -1,3 +1,153 @@
-.language {
-  color: red;
+.lang {
+  background: url('/images/backlang.png');
+  background-size: cover;
+  ul.top {
+    text-align: center;
+    padding: 32px 90px 0;
+    li {
+      display: inline-block;
+      vertical-align: top;
+      width: 24%;
+      position: relative;
+      margin-bottom: 55px;
+      a {
+        color: #fff;
+        font-size: 36px;
+        text-decoration: none;
+        &:before {
+          content: "";
+          width: 180px;
+          height: 180px;
+          border-radius: 50%;
+          display: block;
+          cursor: pointer;
+          margin: 0 auto 16px;
+          border: 1px solid #fff;
+          background-image: url('/images/sprites.png');
+          background-color: rgba(255, 255, 255, .2);
+          background-image: url('/images/sprites.png');
+        }
+      }
+      &:nth-child(1) {
+        a:before {
+          background-position: -195px -164px;
+        }
+        &:hover a:before {
+          background-color: #014398;
+        }
+      }
+      &:nth-child(2) {
+        a {
+          margin: 0 19px;
+          display: block;
+          &:before {
+            background-position: -387px -164px;
+          }
+        }
+        &:hover a:before {
+          background-color: #024b90;
+        }
+      }
+      &:nth-child(3) {
+        a:before {
+          background-position: -598px -164px;
+        }
+        &:hover a:before {
+          background-color: #004499;
+        }
+      }
+
+      &:nth-child(4) {
+        a:before {
+          background-position: -813px -164px;
+        }
+        &:hover a:before {
+          background-color: #004ea5;
+        }
+      }
+    }
+  }
+  .small.nav {
+    position: relative;
+    padding: 25px 30px 0 0;
+    ul {
+      text-align: right;
+      padding: 28px 16px 0 0;
+      display: block;
+      li {
+        .disabled {
+          a {
+            background-color: #002A66;
+          }
+          ul {
+            display: none;
+            position: absolute;
+            width: 424px;
+            background: #fff;
+            border-radius: 6px;
+            padding: 0;
+            z-index: 10;
+            right: 38px;
+            top: 35px;
+            box-sizing: border-box;
+            overflow: hidden;
+            li {
+              width: 100%;
+              padding: 0 20px;
+              box-sizing: border-box;
+              margin: 0;
+              &:hover {
+                background: #39a1fc;
+                margin-top: -1px;
+                padding-top: 1px;
+              }
+              &:last-child a {
+                border-bottom: none;
+              }
+              a {
+                border: none;
+                border-bottom: 1px solid #d2d2d4;
+                display: block;
+                width: 100%;
+                height: auto;
+                text-align: right;
+                font-size: 30px;
+                color: #000;
+                padding: 23px 0 21px;
+                box-sizing: border-box;
+                font-family: Tahoma, serif;
+                background: transparent;
+                border-radius: 0;
+                &:focus {
+                  background-color: #39a1fc;
+                }
+                &.close {
+                  background-image: url(/images/sprites.png);
+                  background-color: #39a1fc;
+                  background-position: -1084px -234px;
+                  width: 42px;
+                  height: 42px;
+                  position: absolute;
+                  top: 18px;
+                  left: 18px;
+                }
+              }
+            }
+          }
+          &:hover {
+            ul {
+              display: block;
+            }
+            a {
+              color: #fff;
+              font-weight: bold;
+              border-bottom: 1px solid transparent;
+            }
+          }
+        }
+      }
+    }
+  }
 }
+
+

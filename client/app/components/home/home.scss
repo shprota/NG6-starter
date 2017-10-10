@@ -1,3 +1,108 @@
 .home {
-  color: red;
+  background: url('/images/backhome.png');
+  background-size: cover;
+  ul.top {
+    text-align: center;
+    padding: 227px 20px 0;
+    li {
+      display: inline-block;
+      vertical-align: top;
+      width: 24%;
+      position: relative;
+      margin-bottom: 55px;
+      a {
+        color: #fff;
+        font-size: 36px;
+        text-decoration: none;
+        &:before {
+          content: "";
+          width: 180px;
+          height: 180px;
+          border-radius: 50%;
+          display: block;
+          cursor: pointer;
+          margin: 0 auto 16px;
+          border: 1px solid #fff;
+          background-image: url('/images/sprites.png');
+        }
+        &:after {
+          content: "";
+          width: 60px;
+          height: 60px;
+          border-radius: 50%;
+          display: block;
+          position: absolute;
+          top: 118px;
+          right: 45px;
+          background: #fff;
+          text-align: center;
+          color: #003369;
+          font-size: 36px;
+          font-weight: bold;
+          box-sizing: border-box;
+          padding-top: 14px;
+        }
+      }
+      &:hover a:before {
+        background-color: #0061a1;
+      }
+      &:nth-child(1) a {
+        padding: 0 70px;
+        text-align: center;
+        display: block;
+        &:after {
+          content: "1";
+          background-position: 0 0;
+        }
+        &:before {
+          background-position: 0 0;
+        }
+      }
+
+      &:nth-child(2) a {
+        &:after {
+          content: "2";
+        }
+        &:before {
+          background-position: -194px 0;
+        }
+      }
+
+      &:nth-child(3) a {
+        &:after {
+          content: "3";
+        }
+        &:before {
+          background-position: -401px 0;
+        }
+      }
+
+      &:nth-child(4) a {
+        &:after {
+          content: "4";
+        }
+        &:before {
+          background-position: -599px 0;
+        }
+      }
+
+      &:nth-child(5) a {
+        &:after {
+          content: "5";
+        }
+        &:before {
+          background-position: -792px 0;
+        }
+      }
+
+      &:nth-child(6) a{
+        &:after {
+          content: "6";
+        }
+        &:before {
+          background-position: -997px 0;
+        }
+      }
+    }
+  }
 }

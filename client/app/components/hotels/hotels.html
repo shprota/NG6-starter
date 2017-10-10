@@ -7,7 +7,6 @@
             <li ng-repeat="post in $ctrl.posts track by $index" ng-click="$ctrl.setCurrentContent(post)">
                 <img src="" ng-src="{{post.thumbnail}}" />
                 <a href="#" ng-bind-html="post.title"></a>
-              <span ng-bind="post.custom_fields.location[0]"></span>
                 <span class="infomenu"></span>
             </li>
         </ul>
@@ -16,30 +15,23 @@
         <div map-lazy-load="https://maps.google.com/maps/api/js" style="height: 100%">
           <ng-map id="map" center="Netanya" zoom="13" default-style="false" style="height: 100%">
             <custom-marker ng-repeat="m in $ctrl.locations"
-                           id="custom-marker-{{$index}}"
+                           id="custom-marker-{{m.id}}"
                            position="{{m.custom_fields.location[0]}}"
+                           on-click="$ctrl.showInfo(m, $index)"
             >
               <div class="mark hotelsmark"></div>
             </custom-marker>
+            <info-window id="hotel-info">
+              <div class="info" ng-nicescroll nice-option="{touchbehavior:true, cursorcolor: '#c71f24'}">
+                  <div class="infoinner">
+                    <img src="" ng-src="{{$ctrl.post.thumbnail}}"/>
+                    <h2 ng-bind-html="$ctrl.post.title"></h2>
+                    <div ng-bind-html="$ctrl.post.content"></div>
+                  </div>
+              </div>
+            </info-window>
           </ng-map>
         </div>
-<!--
-        <div class="mark hotelsmark mark07"></div>
-        <div class="mark hotelsmark mark08"></div>
-        <div class="mark hotelsmark pink mark09"></div>
--->
     </div>
-    <div class="small nav">
-        <ul>
-            <li class="back">
-                <a href="#" /></a>
-            </li>
-            <li class="home">
-                <a href="#" /></a>
-            </li>
-            <li class="disabled">
-                <a href="#" /></a>
-            </li>
-        </ul>
-    </div>
+    <navbar></navbar>
 </div>

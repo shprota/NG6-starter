@@ -1,19 +1,23 @@
 .lang {
   background: url('/images/backlang.png');
   background-size: cover;
+  li {
+    a {
+      color: #fff;
+      font-size: 36px;
+      text-decoration: none;
+    }
+  }
   ul.top {
     text-align: center;
     padding: 32px 90px 0;
     li {
-      display: inline-block;
-      vertical-align: top;
-      width: 24%;
-      position: relative;
-      margin-bottom: 55px;
+        display: inline-block;
+        vertical-align: top;
+        width: 24%;
+        position: relative;
+        margin-bottom: 55px;
       a {
-        color: #fff;
-        font-size: 36px;
-        text-decoration: none;
         &:before {
           content: "";
           width: 180px;
@@ -75,9 +79,19 @@
       padding: 28px 16px 0 0;
       display: block;
       li {
-        .disabled {
+        &.disabled {
           a {
             background-color: #002A66;
+            &.close {
+              background-image: url(/images/sprites.png);
+              background-color: #39a1fc;
+              background-position: -1084px -234px;
+              width: 42px;
+              height: 42px;
+              position: absolute;
+              top: 18px;
+              left: 18px;
+            }
           }
           ul {
             display: none;
@@ -100,6 +114,11 @@
                 background: #39a1fc;
                 margin-top: -1px;
                 padding-top: 1px;
+                a {
+                  color: #fff;
+                  font-weight: bold;
+                  border-bottom: 1px solid transparent;
+                }
               }
               &:last-child a {
                 border-bottom: none;
@@ -121,27 +140,12 @@
                 &:focus {
                   background-color: #39a1fc;
                 }
-                &.close {
-                  background-image: url(/images/sprites.png);
-                  background-color: #39a1fc;
-                  background-position: -1084px -234px;
-                  width: 42px;
-                  height: 42px;
-                  position: absolute;
-                  top: 18px;
-                  left: 18px;
-                }
               }
             }
           }
           &:hover {
             ul {
               display: block;
-            }
-            a {
-              color: #fff;
-              font-weight: bold;
-              border-bottom: 1px solid transparent;
             }
           }
         }

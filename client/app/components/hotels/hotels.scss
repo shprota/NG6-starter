@@ -1,3 +1,107 @@
 .hotels {
-  color: red;
+  background: url('/images/backhotels.png');
+  background-size: cover;
+  .left {
+    .define, h1 {
+      margin: 0;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    .define {
+      background-color: #007cc4;
+      background-position: -194px -28px;
+      background-size: 950%;
+    }
+    h1 {
+      padding: 0 0 0 14px;
+      width: 64%;
+      text-align: left;
+      line-height: 37px;
+    }
+    ul.leftmenu {
+      margin-top: 22px;
+      height: 766px;
+      overflow: auto;
+      position: relative;
+      li {
+        a {
+          font-size: 19px;
+          position: relative;
+          z-index: 5;
+          display: inline-block;
+          vertical-align: middle;
+          width: 220px;
+          text-align: left;
+          padding: 25px 0;
+        }
+        img {
+          width: 91px;
+          display: inline-block;
+          margin: 7px 15px 7px 0;
+          position: relative;
+          z-index: 1;
+          vertical-align: middle;
+        }
+        span.infomenu {
+          width: 30px;
+          height: 30px;
+          background-image: url(/images/sprites.png);
+          background-position: -185px -343px;
+          display: inline-block;
+          vertical-align: middle;
+        }
+      }
+    }
+  }
+}
+
+
+.mark.hotelsmark {
+  background-image: url(/images/mark-hotels.png);
+  &.pink {
+    background-image: url(/images/mark-hotels-pink.png);
+  }
+}
+
+
+.info{
+    width: 655px;
+    height: 700px;
+    background: #e06e00;
+    //position: absolute;
+    //top: 150px;
+    //left: 101px;
+}
+.infoinner{
+    //overflow: auto;
+    padding: 9px 20px 50px;
+}
+.infoinner p{
+    color: #fff;
+    font-size: 12px;
+    line-height: 14px;
+    margin-bottom: 15px;
+}
+.info .images img{
+    display: inline-block;
+    margin: 10px 15px 0 0;
+    vertical-align: top;
+}
+.info .images img:last-child{
+    margin-right: 0;
+}
+
+
+/*idish*/
+.hotels.rtl .left h1 {
+  padding: 0 14px 0 0;
+  text-align: right;
+}
+
+.hotels.rtl ul.leftmenu li a {
+  text-align: right;
+}
+
+.hotels.rtl ul.leftmenu li img {
+  margin: 7px 0 7px 15px;
 }

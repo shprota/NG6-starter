@@ -1,7 +1,7 @@
-<div class="main posts" ng-class="$ctrl.section.name">
+<div class="main posts" ng-class="$ctrl.section.name" ng-keydown="$ctrl.onKey($event)" tabindex="1" maybe-rtl="">
   <div class="left">
     <div class="define"></div>
-    <h1 ng-bind-html="$ctrl.section.title"></h1>
+    <h1 ng-bind-html="$ctrl.catTitle"></h1>
     <ul class="leftmenu nicescroll">
       <li ng-repeat="post in $ctrl.posts track by $index"
           ng-click="$ctrl.setCurrentContent(post)"

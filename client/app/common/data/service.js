@@ -133,17 +133,18 @@ class DataService {
   getPosts(cat) {
     this.posts[this.lang.getLanguage()] = this.posts[this.lang.getLanguage()] || [];
     if (this.posts[this.lang.getLanguage()][cat] && new Date() - this.posts[this.lang.getLanguage()][cat].time < 3 * 3600000) {
-      return Promise.resolve(this.posts[this.lang.getLanguage()][cat].data);
+      return Promise.resolve(this.posts[this.lang.getLanguage()][cat]);
     }
     return this.$http.get(this.wpUrl + `/?cat=${cat}&json=1&lang=${this.lang.getLanguage()}`)
       .then(resp => {
         let posts = resp.data.posts;
-        posts.forEach(this._filterContent);
-        this.posts[this.lang.getLanguage()][cat] = {
+        resp.data.posts.forEach(this._filterContent);
+        return this.posts[this.lang.getLanguage()][cat] = {
           data: posts,
+          title: resp.data.category.title,
           time: new Date
-        }
-        return posts;
+        };
+        //return posts;
       });
   }
 }

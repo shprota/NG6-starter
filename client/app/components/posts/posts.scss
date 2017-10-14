@@ -155,15 +155,15 @@ posts {
 }
 
 /*idish*/
-.hotels.rtl .left h1 {
+.rtl .left h1 {
   padding: 0 14px 0 0;
   text-align: right;
 }
 
-.hotels.rtl ul.leftmenu li a {
-  text-align: right;
+.rtl ul.leftmenu li a {
+  text-align: right !important;
 }
 
-.hotels.rtl ul.leftmenu li img {
+.rtl ul.leftmenu li img {
   margin: 7px 0 7px 15px;
 }

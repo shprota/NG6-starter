@@ -1,0 +1,18 @@
+.contacts {
+    background: url('/images/backcontacts.png');
+    background-size: cover;
+    padding-top: 81px;
+    text-align: center;
+}
+.contacts img{
+    margin-bottom: 54px;
+}
+.contacts p{
+    color: #fff;
+    font-size: 29px;
+    padding-bottom: 11px;
+}
+/*IDISH*/
+.contacts.rtl {
+    background: url('/images/backcontactsrtl.png');
+}

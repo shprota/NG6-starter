@@ -1,16 +1,14 @@
 import angular from 'angular';
 import Home from './home/home';
-import About from './about/about';
 import Language from './language/language';
-import News from './news/news';
-import Hotels from './hotels/hotels';
+import Contact from './contact/contact';
+import Posts from './posts/posts';
 
 let componentModule = angular.module('app.components', [
-  Home,
-  About,
   Language,
-  News,
-  Hotels,
+  Home,
+  Contact,
+  Posts,
 ])
 
 .name;

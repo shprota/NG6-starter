@@ -1,0 +1,49 @@
+<div class="main posts" ng-class="$ctrl.section.name">
+  <div class="left">
+    <div class="define"></div>
+    <h1 ng-bind-html="$ctrl.section.title"></h1>
+    <ul class="leftmenu nicescroll">
+      <li ng-repeat="post in $ctrl.posts track by $index"
+          ng-click="$ctrl.setCurrentContent(post)"
+          class="post"
+          ng-if="!$ctrl.section.isCat">
+        <img src="" ng-src="{{post.thumbnail}}"/>
+        <a href="#" ><span class="white" ng-bind="post.custom_fields.hwe_date[0]" ng-if="$ctrl.section.name === 'news'"></span> <span ng-bind-html="post.title"></span></a>
+        <span class="infomenu"></span>
+      </li>
+      <li ng-repeat="cat in $ctrl.posts"
+          class="cat"
+          ng-if="$ctrl.section.isCat">
+                <a href="" ng-bind-html="cat.title" ng-click="$ctrl.loadCat(cat.id)"></a>
+      </li>
+    </ul>
+  </div>
+  <div class="right">
+    <div map-lazy-load="{{$ctrl.mapsUrl}}" id="map-outer" ng-if="$ctrl.section.name != 'news'">
+      <ng-map id="map" center="Netanya" zoom="13" default-style="false">
+        <custom-marker ng-repeat="m in $ctrl.locations"
+                       id="custom-marker-{{m.id}}"
+                       position="{{m.custom_fields.location[0]}}"
+                       on-click="$ctrl.setCurrentContent(m)"
+        >
+          <div class="mark" ng-class="$ctrl.section.name+'mark'"></div>
+        </custom-marker>
+      </ng-map>
+    </div>
+    <div class="inner nicescroll" ng-if="$ctrl.section.name == 'news'">
+      <div class="date" ng-bind="$ctrl.post.custom_fields.hwe_date[0]"></div>
+      <h2 ng-bind-html="$ctrl.post.title"></h2>
+      <div ng-bind-html="$ctrl.post.content"></div>
+    </div>
+
+    <div id="info-mask" ng-click="$ctrl.showItem = false" ng-show="$ctrl.showItem"></div>
+    <div class="info nicescroll" ng-show="$ctrl.showItem">
+      <img src="" ng-src="{{$ctrl.post.thumbnail}}"/>
+      <div class="infoinner">
+        <h2 ng-bind-html="$ctrl.post.title"></h2>
+        <div ng-bind-html="$ctrl.post.content"></div>
+      </div>
+    </div>
+  </div>
+  <navbar backlink="{{$ctrl.backLink}}"></navbar>
+</div>

@@ -3,7 +3,9 @@ import controller from './navbar.controller';
 import './navbar.scss';
 
 let navbarComponent = {
-  bindings: {},
+  bindings: {
+    backlink: '@'
+  },
   template,
   controller
 };

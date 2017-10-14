@@ -1,0 +1,169 @@
+.hotels, .hotels .info {
+  background-image: url('/images/backhotels.png');
+}
+
+.hotels .left .define {
+  background-color: #007cc4;
+  background-position: -194px -28px;
+  background-size: 950%;
+}
+
+.holiday, .holiday .info {
+  background-image: url('/images/backholiday.png');
+}
+
+.holiday .left .define {
+  background-color: #e06e00;
+  background-position: 0 0;
+  background-size: 660% auto;
+}
+
+.surroundings, .surroundings .info {
+  background-image: url('/images/backholiday.png');
+}
+
+.surroundings .left .define {
+  background-color: #e06e00;
+  background-position: 0 0;
+  background-size: 660% auto;
+}
+
+.enjoying, .enjoying .info {
+  background-image: url('/images/backholiday.png');
+}
+
+.enjoying .left .define {
+  background-color: #e06e00;
+  background-position: 0 0;
+  background-size: 660% auto;
+}
+
+.posts.news {
+  background-image: url('/images/backnews.png');
+
+  .define {
+    background-color: #f1505f;
+    background-position: -701px -27px;
+    background-size: 950%;
+  }
+  .left ul.leftmenu {
+    li.post {
+      a {
+        font-size: 19px;
+        position: relative;
+        z-index: 5;
+        display: inline-block;
+        vertical-align: middle;
+        width: 220px;
+        text-align: left;
+        padding: 9px 0;
+        span.white {
+          display: block;
+          width: 145px;
+          white-space: nowrap;
+          background: #fff;
+          color: #f1505f;
+          font-weight: bold;
+          font-size: 14px;
+          box-sizing: border-box;
+          padding: 5px;
+          text-align: center;
+          margin-bottom: 5px;
+        }
+      }
+    }
+  }
+  span.white {
+    display: block;
+    width: 145px;
+    white-space: nowrap;
+    background: #fff;
+    color: #f1505f;
+    font-weight: bold;
+    font-size: 14px;
+    box-sizing: border-box;
+    padding: 5px;
+    text-align: center;
+    margin-bottom: 5px;
+  }
+
+  .right .inner {
+    background: #fff;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 60px 45px 60px 60px;
+    .date {
+      background: #f1505f;
+      color: #fff;
+      display: inline-block;
+      font-size: 29px;
+      padding: 4px 50px 8px;
+    }
+    h2 {
+      color: #f1505f;
+      padding: 15px 0 10px;
+      margin: 0;
+    }
+    p {
+      margin-bottom: 17px;
+      font-size: 14px;
+      line-height: 18px;
+    }
+  }
+}
+
+posts {
+  display: block;
+}
+
+.posts {
+  .left {
+    .define, h1 {
+      margin: 0;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    h1 {
+      padding: 0 0 0 14px;
+      width: 64%;
+      text-align: left;
+      line-height: 37px;
+    }
+    ul.leftmenu {
+      overflow: hidden;
+      li.post {
+        a {
+          font-size: 19px;
+          position: relative;
+          z-index: 5;
+          display: inline-block;
+          vertical-align: middle;
+          width: 220px;
+          text-align: left;
+          padding: 25px 0;
+        }
+      }
+    }
+  }
+}
+
+.mark.hotelsmark {
+  background-image: url(/images/mark-hotels.png);
+  &.pink {
+    background-image: url(/images/mark-hotels-pink.png);
+  }
+}
+
+/*idish*/
+.hotels.rtl .left h1 {
+  padding: 0 14px 0 0;
+  text-align: right;
+}
+
+.hotels.rtl ul.leftmenu li a {
+  text-align: right;
+}
+
+.hotels.rtl ul.leftmenu li img {
+  margin: 7px 0 7px 15px;
+}

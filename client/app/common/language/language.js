@@ -3,7 +3,7 @@ import LanguageFactory from './language.factory';
 
 let languageModule = angular.module('languageService', [])
 
-.factory('languageFactory', LanguageFactory)
+.service('languageFactory', LanguageFactory)
 
 .name;
 

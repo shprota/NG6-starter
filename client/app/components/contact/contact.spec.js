@@ -1,16 +1,16 @@
-import NewsModule from './news';
-import NewsController from './news.controller';
-import NewsComponent from './news.component';
-import NewsTemplate from './news.html';
+import ContactModule from './contact';
+import ContactController from './contact.controller';
+import ContactComponent from './contact.component';
+import ContactTemplate from './contact.html';
 
-describe('News', () => {
+describe('Contact', () => {
   let $rootScope, makeController;
 
-  beforeEach(window.module(NewsModule));
+  beforeEach(window.module(ContactModule));
   beforeEach(inject((_$rootScope_) => {
     $rootScope = _$rootScope_;
     makeController = () => {
-      return new NewsController();
+      return new ContactController();
     };
   }));
 
@@ -30,20 +30,20 @@ describe('News', () => {
     // template specs
     // tip: use regex to ensure correct bindings are used e.g., {{  }}
     it('has name in template [REMOVE]', () => {
-      expect(NewsTemplate).to.match(/{{\s?\$ctrl\.name\s?}}/g);
+      expect(ContactTemplate).to.match(/{{\s?\$ctrl\.name\s?}}/g);
     });
   });
 
   describe('Component', () => {
     // component/directive specs
-    let component = NewsComponent;
+    let component = ContactComponent;
 
     it('includes the intended template', () => {
-      expect(component.template).to.equal(NewsTemplate);
+      expect(component.template).to.equal(ContactTemplate);
     });
 
     it('invokes the right controller', () => {
-      expect(component.controller).to.equal(NewsController);
+      expect(component.controller).to.equal(ContactController);
     });
   });
 });

@@ -12,7 +12,13 @@ let homeModule = angular.module('home', [
   $stateProvider
     .state('home', {
       url: '/home',
-      component: 'home'
+      component: 'home',
+      resolve: {
+        cats: function(dataService) {
+          "ngInject";
+          return dataService.getCategories();
+        }
+      }
     });
 })
 

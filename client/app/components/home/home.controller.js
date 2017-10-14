@@ -1,8 +1,9 @@
 class HomeController {
-  constructor($state) {
+  constructor(dataService, $state, homeCats) {
     "ngInject";
-    this.name = 'home';
     this.$state = $state;
+    this.homeCats = homeCats;
+    this.service = dataService;
   }
 }
 

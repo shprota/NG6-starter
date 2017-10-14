@@ -1,43 +1,38 @@
 <div class="main home">
     <ul class="top">
-        <li ng-click="$ctrl.$state.go('holiday')">
-            <a href="#" />
-                Active holiday
+        <li ng-click="$ctrl.$state.go('posts', {section: 'holiday', cat: ''})">
+            <a href="#" ng-bind-html="$ctrl.service.getSection('holiday').title">
             </a>
         </li>
-        <li ng-click="$ctrl.$state.go('hotels')">
-            <a href="#" />
-                Hotels in Neyanya
+        <li ng-click="$ctrl.$state.go('posts', {section: 'hotels', cat: ''})">
+            <a href="#" ng-bind-html="$ctrl.service.getSection('hotels').title">
             </a>
         </li>
-        <li ng-click="$ctrl.$state.go('enjoying')">
-            <a href="#" />
-                Enjoying in Netanya
+        <li ng-click="$ctrl.$state.go('posts', {section: 'enjoying', cat: ''})">
+            <a href="#" ng-bind-html="$ctrl.service.getSection('enjoying').title">
             </a>
         </li>
-        <li ng-click="$ctrl.$state.go('surroundings')">
-            <a href="#" />
-                Surroundings
+        <li ng-click="$ctrl.$state.go('posts', {section: 'surroundings', cat: ''})">
+            <a href="#" ng-bind-html="$ctrl.service.getSection('surroundings').title">
             </a>
         </li>
-        <li ng-click="$ctrl.$state.go('news')">
-            <a href="#"/>
-                Neyanya News & Events
+        <li ng-click="$ctrl.$state.go('posts', {section: 'news', cat: ''})">
+            <a href="#" ng-bind-html="$ctrl.service.getSection('news').title">
             </a>
         </li>
         <li ng-click="$ctrl.$state.go('contact')">
-            <a href="#" />
-                Contact us
+            <a href="#">
+              Contact
             </a>
         </li>
     </ul>
     <div class="small nav">
         <ul>
             <li class="earth">
-                <a href="#" /></a>
+                <a href="" ui-sref="language"></a>
             </li>
             <li class="disabled">
-                <a href="#" /></a>
+                <a href=""></a>
             </li>
         </ul>
     </div>

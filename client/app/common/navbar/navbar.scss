@@ -1,1 +1,45 @@
-@import '../common';
+.small.nav {
+  padding: 0;
+  position: absolute;
+  bottom: 25px;
+  left: 30px;
+  li {
+    display: inline-block;
+    margin-right: 15px;
+    a {
+      width: 55px;
+      height: 55px;
+      padding: 0;
+      display: block;
+      border-radius: 50%;
+      background-color: transparent;
+      border: 1px solid #fff;
+      background-image: url('/images/sprites.png');
+    }
+    a:hover {
+      //background-color: #0061a1;
+      background-color: rgba(0, 0, 0, .2);
+    }
+
+    &.earth a {
+      background-position: -19px -230px;
+    }
+    &.disabled {
+      position: relative;
+      a {
+        background-position: -93px -229px;
+        position: relative;
+        z-index: 20;
+      }
+    }
+    &.home {
+      background: none;
+      a {
+        background-position: -97px -326px;
+      }
+    }
+    &.back a {
+      background-position: -10px -326px;
+    }
+  }
+}

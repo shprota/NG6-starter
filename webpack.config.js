@@ -50,7 +50,7 @@ module.exports = {
       jquery: "jquery/src/jquery",
       niceScroll: 'jquery.nicescroll/jquery.nicescroll',
       ngNiceScroll: 'angular-nicescroll/angular-nicescroll',
-      ngMap: 'ngmap/build/scripts/ng-map'
+      ngMap: 'ngmap/build/scripts/ng-map',
     }
   },
 

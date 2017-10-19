@@ -1,4 +1,4 @@
-<div class="main home">
+<div class="main home" ng-keydown="$ctrl.onKey($event)" tabindex="1">
     <ul class="top">
         <li ng-click="$ctrl.$state.go('posts', {section: 'holiday', cat: ''})">
             <a href="#" ng-bind-html="$ctrl.service.getSection('holiday').title">

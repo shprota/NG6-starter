@@ -41,4 +41,4 @@
 
 
 .ng-enter { animation: scaleUp 0.5s both ease-in; z-index: 8888; }
-.ng-leave { animation: slideOutLeft 0.5s both ease-in; z-index: 9999; }
+.ng-leave { animation: slideOutLeft 0.5s both ease-in; z-index: 9999; position: absolute; left: 0; top: 0;}

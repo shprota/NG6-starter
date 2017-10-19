@@ -7,6 +7,7 @@ import AppComponent from './app.component';
 import ngSanitize from 'angular-sanitize';
 import ngMap from 'ngmap';
 //import 'normalize.css';
+import tts from './common/tts';
 
 angular.module('app', [
     uiRouter,
@@ -15,6 +16,7 @@ angular.module('app', [
     ngSanitize,
     ngMap,
     ngAnimate,
+    tts,
   ])
   .config(($locationProvider) => {
     "ngInject";

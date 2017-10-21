@@ -1,15 +1,19 @@
-let LanguageFactory = function () {
-  let language = 'ru';
+class LanguageFactory {
+  constructor(gettextCatalog) {
+    "ngInject";
+    this.language = 'ru';
+    this.gettextCatalog = gettextCatalog;
+    this.gettextCatalog.setCurrentLanguage(this.language);
+  }
 
-  let getLanguage = () => {
-    return language;
+  getLanguage() {
+    return this.language;
   };
 
-  let setLanguage = (lang) => {
-     language = lang;
+  setLanguage(lang)  {
+     this.language = lang;
+     this.gettextCatalog.setCurrentLanguage(lang);
   };
-
-  return { getLanguage, setLanguage };
-};
+}
 
 export default LanguageFactory;

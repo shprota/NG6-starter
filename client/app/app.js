@@ -1,11 +1,13 @@
 import angular from 'angular';
 import ngAnimate from 'angular-animate';
 import uiRouter from '@uirouter/angularjs';
+import ngMap from 'ngmap';
+import 'angular-gettext/dist/angular-gettext';
+
 import Common from './common/common';
 import Components from './components/components';
 import AppComponent from './app.component';
 import ngSanitize from 'angular-sanitize';
-import ngMap from 'ngmap';
 //import 'normalize.css';
 import tts from './common/tts';
 
@@ -17,6 +19,7 @@ angular.module('app', [
     ngMap,
     ngAnimate,
     tts,
+    'gettext',
   ])
   .config(($locationProvider) => {
     "ngInject";

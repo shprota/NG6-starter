@@ -1,29 +1,22 @@
 <div class="main home" ng-keydown="$ctrl.onKey($event)" tabindex="1">
     <ul class="top">
         <li ng-click="$ctrl.$state.go('posts', {section: 'holiday', cat: ''})">
-            <a href="#" ng-bind-html="$ctrl.service.getSection('holiday').title">
-            </a>
+            <a href="#" ng-bind-html="$ctrl.service.getSection('holiday').title"></a>
         </li>
         <li ng-click="$ctrl.$state.go('posts', {section: 'hotels', cat: ''})">
-            <a href="#" ng-bind-html="$ctrl.service.getSection('hotels').title">
-            </a>
+            <a href="#" ng-bind-html="$ctrl.service.getSection('hotels').title"></a>
         </li>
         <li ng-click="$ctrl.$state.go('posts', {section: 'enjoying', cat: ''})">
-            <a href="#" ng-bind-html="$ctrl.service.getSection('enjoying').title">
-            </a>
+            <a href="#" ng-bind-html="$ctrl.service.getSection('enjoying').title"></a>
         </li>
         <li ng-click="$ctrl.$state.go('posts', {section: 'surroundings', cat: ''})">
-            <a href="#" ng-bind-html="$ctrl.service.getSection('surroundings').title">
-            </a>
+            <a href="#" ng-bind-html="$ctrl.service.getSection('surroundings').title"></a>
         </li>
         <li ng-click="$ctrl.$state.go('posts', {section: 'news', cat: ''})">
-            <a href="#" ng-bind-html="$ctrl.service.getSection('news').title">
-            </a>
+            <a href="#" ng-bind-html="$ctrl.service.getSection('news').title"></a>
         </li>
         <li ng-click="$ctrl.$state.go('contact')">
-            <a href="#">
-              Contact
-            </a>
+            <a href="#" translate-context="Noun" translate="">Contact</a>
         </li>
     </ul>
     <div class="small nav">

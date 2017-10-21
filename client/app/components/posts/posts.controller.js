@@ -12,6 +12,7 @@ class PostsController {
     $window.scrollTo(0, 0);
     this.setCurrentContent = this._setCurrentContent.bind(this);
     this.backLink = 'home';
+    this.isContrast = false;
   }
 
   $onInit() {

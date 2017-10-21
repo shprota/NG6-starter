@@ -200,6 +200,15 @@
       }
     }
   }
+  &.contrast {
+    background: #000;
+    .info {
+      background: #000;
+    }
+    .left .define {
+      background-color: #000;
+    }
+  }
 }
 
 #map-outer, #map {

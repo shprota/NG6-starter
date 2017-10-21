@@ -1,12 +1,15 @@
-var path = require('path');
-var webpack = require('webpack');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require('path');
+const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const AngularGetTextPlugin = require('angular-gettext-plugin');
 
 module.exports = {
   devtool: 'source-map',
   entry: {},
   module: {
     loaders: [
+      {test: /\.po$/, loader: 'json!angular-gettext?format=json'},
+      {test: /\.json$/, loader: 'json-loader'},
       {test: /\.js$/, exclude: [/app\/lib/, /node_modules/], loader: 'ng-annotate!babel'},
       {test: /\.html$/, loader: 'raw'},
       {test: /\.(scss|sass)$/, loader: 'style!css!sass'},
@@ -20,6 +23,20 @@ module.exports = {
     ]
   },
   plugins: [
+    new AngularGetTextPlugin({
+/*
+      compileTranslations: { //optional
+        input: 'client/po/!*.po',
+        outputFolder: 'client/app/common/l10n',
+        format: 'javascript'
+      },
+*/
+      extractStrings: { //optional
+        input: 'client/app/**/*.html',
+        destination: 'client/app/common/po/template.pot'
+        //Any of the angular-gettext-tools Extractor options
+      }
+    }),
     // Injects bundles in your index.html instead of wiring all manually.
     // It also adds hash to all injected assets so we don't have problems
     // with cache purging during deployment.

@@ -4,7 +4,8 @@ import './navbar.scss';
 
 let navbarComponent = {
   bindings: {
-    backlink: '@'
+    dis: '=',
+    backlink: '@',
   },
   template,
   controller

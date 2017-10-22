@@ -18,6 +18,10 @@
   background-size: 660% auto;
 }
 
+.holiday .catimage {
+  background: url('/images/activeholiday.jpg');
+
+}
 .surroundings, .surroundings .info {
   background-image: url('/images/backsurrounds.png');
 }
@@ -28,6 +32,10 @@
   background-size: 794% auto;
 }
 
+.surroundings .catimage {
+  background: url('/images/surrounds.jpg');
+}
+
 .enjoying, .enjoying .info {
   background-image: url('/images/backenjoying.png');
 }
@@ -36,6 +44,10 @@
   background-color: #5094a4;
   background-position: -295px -8px;
   background-size: 794% auto;
+}
+
+.enjoying .catimage {
+  background: url('/images/enjoying.jpg');
 }
 
 .news {
@@ -86,6 +98,12 @@
   }
   .left {
     width: 400px;
+    .catimage {
+      width: 365px;
+      height: 247px;
+      background-color: #f00;
+      display: inline-block;
+    }
     .define, h1 {
       margin: 0;
       display: inline-block;
@@ -119,7 +137,7 @@
         padding: 5px 0;
         margin-bottom: 60px;
         display: block;
-        width: inherit;
+        width: 100%;
       }
       ul.leftmenu {
         li {
@@ -142,7 +160,7 @@
       overflow: hidden;
       li {
         border-bottom: 1px solid #fff;
-        &:hover {
+        &:hover, &.selected {
           background-color: rgba(0, 0, 0, .2);
         }
         a {

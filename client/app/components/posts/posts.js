@@ -47,7 +47,8 @@ let postsModule = angular.module('posts', [
                 return section;
               })
               .then(section => {
-                return (section.isCat ? dataService.getCategories(section.id) : dataService.getPosts(section.id))
+                let count = section.name === 'news'? 20 : 2000;
+                return (section.isCat ? dataService.getCategories(section.id) : dataService.getPosts(section.id, count))
                   .then(posts => {
                     section.posts = posts;
                     return section;

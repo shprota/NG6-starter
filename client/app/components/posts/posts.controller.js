@@ -2,7 +2,7 @@ import '../../../css/bootstrap.css';
 import '../../../css/img-gallery.css';
 
 class PostsController {
-  constructor(mapsUrl, $timeout, $state, $window, languageFactory, $element) {
+  constructor(mapsUrl, $timeout, $state, $window, languageFactory, $element, $rootScope) {
     "ngInject";
 
     this.mapsUrl = mapsUrl;
@@ -10,6 +10,7 @@ class PostsController {
     this.$state = $state;
     this.languageFactory = languageFactory;
     this.$element = $element;
+    this.$rootScope = $rootScope;
     $window.scrollTo(0, 0);
     this.setCurrentContent = this._setCurrentContent.bind(this);
     this.backLink = 'home';
@@ -37,10 +38,20 @@ class PostsController {
   $postLink() {
     $(this.$element).find('.main').focus();
     this.$timeout(() => {
+      console.log("Scroll init");
       $('.nicescroll').each((i, e) => $(e).niceScroll({touchbehavior:true, cursorcolor: '#888', autohidemode: 'scroll'}).resize());
+    }, 300);
+
+    this.$timeout(() =>this.$rootScope.$emit('lazyImg:refresh'), 600);
+  }
+
+  imagesLoaded() {
+    this.$timeout(() => {
+      console.log("Images loaded");
       let ns = $('.leftmenu').getNiceScroll(0);
       ns.resize();
-    }, 600);
+    }, 300);
+
   }
 
 
@@ -55,6 +66,9 @@ class PostsController {
     }
     ns.doScrollTop(0, 1);
 
+    $('ul.leftmenu').animate({
+      scrollTop: parseInt($('ul.leftmenu li.selected').offset().top)
+    }, 200);
 
     this.post = post;
     if (this.section.name !== 'news') {

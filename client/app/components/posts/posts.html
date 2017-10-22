@@ -1,4 +1,4 @@
-<div class="main posts {{$ctrl.section.name}}" ng-class="{contrast: $ctrl.isContrast}" ng-keydown="$ctrl.onKey($event)" tabindex="1" maybe-rtl="">
+<div class="main posts {{$ctrl.section.name}}" ng-class="{contrast: $ctrl.isContrast, rtl: $ctrl.languageFactory.getLanguage() === 'he'}" ng-keydown="$ctrl.onKey($event)" tabindex="1">
   <div class="left" ng-class="{cat: $ctrl.section.isCat}">
     <img src="/images/activeholiday.jpg" ng-if="$ctrl.section.isCat"/>
     <div class="define"></div>

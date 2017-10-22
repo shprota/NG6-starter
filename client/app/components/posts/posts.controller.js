@@ -2,12 +2,13 @@ import '../../../css/bootstrap.css';
 import '../../../css/img-gallery.css';
 
 class PostsController {
-  constructor(mapsUrl, $timeout, $state, $window, $animate, $element) {
+  constructor(mapsUrl, $timeout, $state, $window, languageFactory, $element) {
     "ngInject";
 
     this.mapsUrl = mapsUrl;
     this.$timeout = $timeout;
     this.$state = $state;
+    this.languageFactory = languageFactory;
     this.$element = $element;
     $window.scrollTo(0, 0);
     this.setCurrentContent = this._setCurrentContent.bind(this);

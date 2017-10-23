@@ -3,8 +3,7 @@ import ngAnimate from 'angular-animate';
 import uiRouter from '@uirouter/angularjs';
 import ngMap from 'ngmap';
 import 'angular-gettext/dist/angular-gettext';
-//import 'imagesloaded/imagesloaded';
-//import 'angular-imagesloaded/dist/angular-imagesloaded';
+import 'angular-imagesloaded/dist/angular-imagesloaded';
 //import 'angular-lazy-img/dist/angular-lazy-img';
 import Common from './common/common';
 import Components from './components/components';
@@ -22,7 +21,7 @@ angular.module('app', [
     ngAnimate,
     tts,
     'gettext',
-    //'bc.imagesloaded',
+    'bc.imagesloaded',
     //'angularLazyImg',
   ])
   .config(($locationProvider/*, lazyImgConfigProvider*/) => {

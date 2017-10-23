@@ -151,13 +151,14 @@
         }
       }
     }
-
+    #menu-container {
+      height: 766px;
+    }
     ul.leftmenu {
       border-top: 1px solid #fff;
       margin-top: 22px;
-      height: 766px;
       position: relative;
-      overflow: hidden;
+      //overflow: hidden;
       li {
         border-bottom: 1px solid #fff;
         &:hover, &.selected {

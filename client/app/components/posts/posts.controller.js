@@ -38,20 +38,42 @@ class PostsController {
   $postLink() {
     $(this.$element).find('.main').focus();
     this.$timeout(() => {
-      console.log("Scroll init");
       $('.nicescroll').each((i, e) => $(e).niceScroll({touchbehavior:true, cursorcolor: '#888', autohidemode: 'scroll'}).resize());
     }, 300);
+    this.dereg = this.$rootScope.$watch(function(){
+      return $('.leftmenu').height();
+    }, this.imagesLoaded.bind(this));
+  }
 
-    this.$timeout(() =>this.$rootScope.$emit('lazyImg:refresh'), 600);
+  $onDestroy() {
+    this.dereg();
   }
 
   imagesLoaded() {
     this.$timeout(() => {
-      console.log("Images loaded");
-      let ns = $('.leftmenu').getNiceScroll(0);
-      ns.resize();
-    }, 300);
+      console.log("Resize scroll");
+      let ns = $('#menu-container').getNiceScroll(0);
+      if (ns.length) {
+        ns.resize();
+      }
+    });
+  }
 
+
+  setSelInView() {
+    let menu = $('#menu-container');
+    let sel = $('ul.leftmenu li.selected');
+    if (!sel.length) {
+      return;
+    }
+    if(sel.offset().top - menu.offset().top + sel.height() > menu.height() || sel.offset().top - menu.offset().top < 0 ) {
+      let realOffset = sel.offset().top  + menu.scrollTop();
+      let target = menu.height()/2 - sel.height()/2;
+      let scrollTo = realOffset - target;
+      menu.animate({
+        scrollTop: scrollTo
+      }, 200);
+    }
   }
 
 
@@ -66,14 +88,12 @@ class PostsController {
     }
     ns.doScrollTop(0, 1);
 
-    $('ul.leftmenu').animate({
-      scrollTop: parseInt($('ul.leftmenu li.selected').offset().top)
-    }, 200);
 
     this.post = post;
     if (this.section.name !== 'news') {
       this.showItem = true;
     }
+    this.$timeout(this.setSelInView.bind(this), 50);
     this.$timeout(() => {
       ns.resize();
     }, 300);

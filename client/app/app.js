@@ -5,7 +5,7 @@ import ngMap from 'ngmap';
 import 'angular-gettext/dist/angular-gettext';
 //import 'imagesloaded/imagesloaded';
 //import 'angular-imagesloaded/dist/angular-imagesloaded';
-import 'angular-lazy-img/dist/angular-lazy-img';
+//import 'angular-lazy-img/dist/angular-lazy-img';
 import Common from './common/common';
 import Components from './components/components';
 import AppComponent from './app.component';
@@ -23,13 +23,14 @@ angular.module('app', [
     tts,
     'gettext',
     //'bc.imagesloaded',
-    'angularLazyImg',
+    //'angularLazyImg',
   ])
-  .config(($locationProvider, lazyImgConfigProvider) => {
+  .config(($locationProvider/*, lazyImgConfigProvider*/) => {
     "ngInject";
     // @see: https://github.com/angular-ui/ui-router/wiki/Frequently-Asked-Questions
     // #how-to-configure-your-server-to-work-with-html5mode
     $locationProvider.html5Mode(true).hashPrefix('!');
+/*
     lazyImgConfigProvider.setOptions({
       onSuccess: function(img) {
         let el = $(img.$elem.get(0)).parents('.nicescroll');
@@ -38,6 +39,7 @@ angular.module('app', [
         }
       }
     });
+*/
   })
   .run(($transitions) => {
     "ngInject";
@@ -47,7 +49,7 @@ angular.module('app', [
       });
     });
   })
-  .constant('wpUrl', 'http://gn.shprota.com')
+  .constant('wpUrl', 'http://gonetanya.com')
   .constant('mapsUrl', 'https://maps.google.com/maps/api/js?key=AIzaSyDHVHOiHjXhgl8Zz3GTwkZVgm8HCNRG3fc')
   .constant('homeCats', {
     news: 66,

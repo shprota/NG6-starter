@@ -11,13 +11,13 @@
 -->
     <div class="define"></div>
     <h1 ng-bind-html="$ctrl.catTitle"></h1>
-    <ul class="leftmenu nicescroll" lazy-img-container>
+    <ul class="leftmenu nicescroll">
       <li ng-repeat="post in $ctrl.posts track by $index"
           ng-click="$ctrl.setCurrentContent(post)"
           class="post"
           ng-class="{selected: $ctrl.post.id === post.id}"
           ng-if="!$ctrl.section.isCat">
-        <img class="menuimage" src="" lazy-img="{{post.thumbnail}}"/>
+        <img class="menuimage" src="" ng-src="{{post.thumbnail}}"/>
         <a href="#" ><span class="white" ng-bind="post.custom_fields.hwe_date[0]" ng-if="$ctrl.section.name === 'news'"></span> <span ng-bind-html="post.title"></span></a>
         <span class="infomenu"></span>
       </li>
@@ -48,7 +48,7 @@
 
     <div id="info-mask" ng-click="$ctrl.showItem = false" ng-show="$ctrl.showItem"></div>
     <div class="info nicescroll" ng-show="$ctrl.showItem">
-      <img src="" lazy-img="{{$ctrl.post.thumbnail}}"/>
+      <img src="" ng-src="{{$ctrl.post.thumbnail}}"/>
       <div class="infoinner">
         <h2 ng-bind-html="$ctrl.post.title"></h2>
         <div ng-bind-html="$ctrl.post.content"></div>

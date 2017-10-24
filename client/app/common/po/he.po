@@ -1,21 +1,21 @@
 msgid ""
 msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
 "Project-Id-Version: GoNetanya\n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: \n"
 "Last-Translator: Shprota <shprota@shprota.com>\n"
 "Language-Team: \n"
-"Language: fr\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.5.4\n"
+"Language: he\n"
 
 #: client/app/components/home/home.html:19
 msgctxt "Noun"
 msgid "Contact"
-msgstr "Contact"
+msgstr "צור קשר"
 
 #: client/app/components/language/language.controller.js:11
 msgid "Welcome to Netanya!. For English press 1"
-msgstr "Bienvenue à Netanya!. Cliquez 3 pour le français"
+msgstr "ברוכים הבאים לנתניה. לעברית לחצו 4"

@@ -38,11 +38,24 @@ class PostsController {
   $postLink() {
     $(this.$element).find('.main').focus();
     this.$timeout(() => {
-      $('.nicescroll').each((i, e) => $(e).niceScroll({touchbehavior:true, cursorcolor: '#888', autohidemode: 'scroll'}).resize());
-    }, 300);
-    this.dereg = this.$rootScope.$watch(function(){
-      return $('.leftmenu').height();
-    }, this.imagesLoaded.bind(this));
+      $('.nicescroll').each((i, e) => $(e).niceScroll({
+        touchbehavior: true,
+        cursorcolor: '#888',
+        autohidemode: 'scroll'
+      }));
+    });
+    let timer;
+    let height = -1;
+    const DEBOUNCE_INTERVAL = 400;
+    this.dereg = this.$rootScope.$watch(() => {
+      timer = timer || this.$timeout(() => {
+        let h = $('ul.leftmenu').height();
+        if (h !== height) {
+          height = h;
+          this.imagesLoaded();
+        }
+      }, DEBOUNCE_INTERVAL);
+    }, false);
   }
 
   $onDestroy() {
@@ -51,9 +64,8 @@ class PostsController {
 
   imagesLoaded() {
     this.$timeout(() => {
-      console.log("Resize scroll");
       let ns = $('#menu-container').getNiceScroll(0);
-      if (ns.length) {
+      if (ns) {
         ns.resize();
       }
     });
@@ -66,9 +78,9 @@ class PostsController {
     if (!sel.length) {
       return;
     }
-    if(sel.offset().top - menu.offset().top + sel.height() > menu.height() || sel.offset().top - menu.offset().top < 0 ) {
-      let realOffset = sel.offset().top  + menu.scrollTop();
-      let target = menu.height()/2 - sel.height()/2;
+    if (sel.offset().top - menu.offset().top + sel.height() > menu.height() || sel.offset().top - menu.offset().top < 0) {
+      let realOffset = sel.offset().top + menu.scrollTop();
+      let target = menu.height() / 2 - sel.height() / 2;
       let scrollTo = realOffset - target;
       menu.animate({
         scrollTop: scrollTo
@@ -84,7 +96,7 @@ class PostsController {
     const selector = this.section.name === 'news' ? '.right .inner' : '.info';
     let ns = $(selector).getNiceScroll(0);
     if (!ns) {
-      ns = $(selector).niceScroll({touchbehavior:true, cursorcolor: '#888', autohidemode: 'scroll'});
+      ns = $(selector).niceScroll({touchbehavior: true, cursorcolor: '#888', autohidemode: 'scroll'});
     }
     ns.doScrollTop(0, 1);
 
@@ -104,7 +116,7 @@ class PostsController {
   }
 
   onKey(e) {
-    if(~['0','1','2','3','4','5','6','7','8','9'].indexOf(e.key)) {
+    if (~['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'].indexOf(e.key)) {
       console.log("Key: ", e);
       let post = this.posts[parseInt(e.key)];
       this._setCurrentContent(post);

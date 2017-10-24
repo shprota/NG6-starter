@@ -32,7 +32,7 @@ module.exports = {
       },
 */
       extractStrings: { //optional
-        input: 'client/app/**/*.html',
+        input: 'client/app/**/*.+(html|js)',
         destination: 'client/app/common/po/template.pot'
         //Any of the angular-gettext-tools Extractor options
       }

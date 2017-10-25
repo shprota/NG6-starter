@@ -1,5 +1,6 @@
 import angular from 'angular';
 import ngAnimate from 'angular-animate';
+import ngTouch from 'angular-touch';
 import uiRouter from '@uirouter/angularjs';
 import ngMap from 'ngmap';
 import 'angular-gettext/dist/angular-gettext';
@@ -23,6 +24,7 @@ angular.module('app', [
     'gettext',
     'bc.imagesloaded',
     //'angularLazyImg',
+    ngTouch,
   ])
   .config(($locationProvider/*, lazyImgConfigProvider*/) => {
     "ngInject";

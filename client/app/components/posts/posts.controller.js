@@ -2,7 +2,7 @@ import '../../../css/bootstrap.css';
 import '../../../css/img-gallery.css';
 
 class PostsController {
-  constructor(mapsUrl, $timeout, $state, $window, languageFactory, $element, $rootScope) {
+  constructor(mapsUrl, NgMap, $timeout, $state, $window, languageFactory, $element, $rootScope) {
     "ngInject";
 
     this.mapsUrl = mapsUrl;
@@ -15,6 +15,9 @@ class PostsController {
     this.setCurrentContent = this._setCurrentContent.bind(this);
     this.backLink = 'home';
     this.isContrast = false;
+    NgMap.getMap().then(() => {
+      $('a[target]').remove();
+    });
   }
 
   $onInit() {
@@ -38,36 +41,29 @@ class PostsController {
   $postLink() {
     $(this.$element).find('.main').focus();
     this.$timeout(() => {
-      $('.nicescroll').each((i, e) => $(e).niceScroll({
-        touchbehavior: true,
-        cursorcolor: '#888',
-        autohidemode: 'scroll'
-      }));
+      $('.nicescroll').each((i, e) => {
+        $(e).niceScroll({
+          emulatetouch: true,
+          cursorcolor: '#888',
+          autohidemode: 'scroll',
+          bouncescroll: true,
+          cursordragontouch: true,
+          preventmultitouchscrolling: false,
+        });
+        $(e).imagesLoaded().always(this.imagesLoaded.bind(this));
+      });
     });
-    let timer;
-    let height = -1;
-    const DEBOUNCE_INTERVAL = 400;
-    this.dereg = this.$rootScope.$watch(() => {
-      timer = timer || this.$timeout(() => {
-        let h = $('ul.leftmenu').height();
-        if (h !== height) {
-          height = h;
-          this.imagesLoaded();
-        }
-      }, DEBOUNCE_INTERVAL);
-    }, false);
   }
 
-  $onDestroy() {
-    this.dereg();
-  }
-
-  imagesLoaded() {
+  imagesLoaded(instance) {
+    console.log("images loaded", instance);
     this.$timeout(() => {
-      let ns = $('#menu-container').getNiceScroll(0);
-      if (ns) {
-        ns.resize();
+      let el = $(instance.elements[0]);
+      let ns = el.getNiceScroll(0);
+      if (!ns) {
+        ns = el.parents('.nicescroll').getNiceScroll(0);
       }
+      ns.resize();
     });
   }
 
@@ -94,21 +90,23 @@ class PostsController {
     //let ns = $('.right .inner').getNiceScroll(0);
 
     const selector = this.section.name === 'news' ? '.right .inner' : '.info';
-    let ns = $(selector).getNiceScroll(0);
-    if (!ns) {
-      ns = $(selector).niceScroll({touchbehavior: true, cursorcolor: '#888', autohidemode: 'scroll'});
-    }
-    ns.doScrollTop(0, 1);
+    $(selector).scrollTop(0);
 
 
     this.post = post;
     if (this.section.name !== 'news') {
       this.showItem = true;
     }
-    this.$timeout(this.setSelInView.bind(this), 50);
     this.$timeout(() => {
+      this.setSelInView();
+      $('.postcontent').imagesLoaded().always(this.imagesLoaded.bind(this));
+    });
+/*
+    this.$timeout(() => {
+      let ns = $(selector).getNiceScroll(0);
       ns.resize();
     }, 300);
+*/
   }
 
   loadCat(cat) {

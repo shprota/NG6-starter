@@ -5,6 +5,7 @@ import postsComponent from './posts.component';
 import 'jquery';
 import 'niceScroll';
 import 'ngNiceScroll';
+import imagesLoaded from 'imagesloaded/imagesloaded';
 
 let postsModule = angular.module('posts', [
   uiRouter,
@@ -13,7 +14,7 @@ let postsModule = angular.module('posts', [
 ])
   .config(($stateProvider) => {
     "ngInject";
-
+    imagesLoaded.makeJQueryPlugin();
     $stateProvider
       .state('posts', {
         url: '/posts/:section/:cat?',

@@ -9,7 +9,7 @@
     <div class="define"></div>
     <h1 ng-bind-html="$ctrl.catTitle"></h1>
     <div id="menu-container" class="nicescroll">
-      <ul class="leftmenu" bc-imagesloaded=".menuimage" bc-background=".infomenu" bc-always-method="$ctrl.imagesLoaded()">
+      <ul class="leftmenu">
         <li ng-repeat="post in $ctrl.posts track by $index"
             ng-click="$ctrl.setCurrentContent(post)"
             class="post"
@@ -29,7 +29,20 @@
   </div>
   <div class="right">
     <div map-lazy-load="{{$ctrl.mapsUrl}}" id="map-outer" ng-if="$ctrl.section.name != 'news'">
-      <ng-map id="map" center="Netanya" zoom="13" default-style="false">
+      <ng-map id="map" center="Netanya" zoom="13" default-style="false"
+              scale-control="false"
+              zoom-control="false"
+              overview-map-control="false"
+              pan-control="false"
+              scale-control="false"
+              rotate-control="false"
+              street-view-control="false"
+              map-type-control="false"
+              fullscreen-control="false"
+              sign-in-control="false"
+              clickable-icons="false"
+              disable-default-ui="true"
+      >
         <custom-marker ng-repeat="m in $ctrl.locations"
                        id="custom-marker-{{m.id}}"
                        position="{{m.custom_fields.location[0]}}"
@@ -42,15 +55,15 @@
     <div class="inner nicescroll" ng-if="$ctrl.section.name == 'news'">
       <div class="date" ng-bind="$ctrl.post.custom_fields.hwe_date[0]"></div>
       <h2 ng-bind-html="$ctrl.post.title"></h2>
-      <div ng-bind-html="$ctrl.post.content"></div>
+      <div class="postcontent" ng-bind-html="$ctrl.post.content"></div>
     </div>
 
     <div id="info-mask" ng-click="$ctrl.showItem = false" ng-show="$ctrl.showItem"></div>
     <div class="info nicescroll" ng-show="$ctrl.showItem">
-      <img ng-src="{{$ctrl.post.thumbnail}}"/>
+      <img ng-src="{{$ctrl.postCover()}}" ng-if="$ctrl.postCover()"/>
       <div class="infoinner">
-        <h2 ng-bind-html="$ctrl.post.title"></h2>
-        <div ng-bind-html="$ctrl.post.content"></div>
+        <h2 id="infotitle" ng-bind-html="$ctrl.post.title"></h2>
+        <div class="postcontent" ng-bind-html="$ctrl.post.content"></div>
       </div>
     </div>
   </div>

@@ -22,6 +22,7 @@
   background: url('/images/activeholiday.jpg');
 
 }
+
 .surroundings, .surroundings .info {
   background-image: url('/images/backsurrounds.png');
 }
@@ -154,59 +155,6 @@
     #menu-container {
       height: 766px;
     }
-    ul.leftmenu {
-      border-top: 1px solid #fff;
-      margin-top: 22px;
-      position: relative;
-      //overflow: hidden;
-      li {
-        border-bottom: 1px solid #fff;
-        &:hover, &.selected {
-          background-color: rgba(0, 0, 0, .2);
-        }
-        a {
-          text-decoration: none;
-          color: #fff;
-          position: relative;
-
-          font-size: 19px;
-          display: inline-block;
-          vertical-align: middle;
-          width: 220px;
-          text-align: left;
-          padding: 25px 0;
-        }
-        img {
-          width: 91px;
-          display: inline-block;
-          margin: 7px 15px 7px 0;
-          position: relative;
-          z-index: 1;
-          vertical-align: middle;
-        }
-        span.infomenu {
-          width: 30px;
-          height: 30px;
-          background-image: url(/images/sprites.png);
-          background-position: -185px -343px;
-          display: inline-block;
-          vertical-align: middle;
-        }
-        span.white {
-          display: block;
-          width: 145px;
-          white-space: nowrap;
-          background: #fff;
-          color: #f1505f;
-          font-weight: bold;
-          font-size: 14px;
-          box-sizing: border-box;
-          padding: 5px;
-          text-align: center;
-          margin-bottom: 5px;
-        }
-      }
-    }
   }
   &.news {
     .left {
@@ -230,6 +178,60 @@
   }
 }
 
+ul.leftmenu {
+  border-top: 1px solid #fff;
+  margin-top: 22px;
+  position: relative;
+  //overflow: hidden;
+  li {
+    border-bottom: 1px solid #fff;
+    &:hover, &.selected {
+      background-color: rgba(0, 0, 0, .2);
+    }
+    a {
+      text-decoration: none;
+      color: #fff;
+      position: relative;
+
+      font-size: 19px;
+      display: inline-block;
+      vertical-align: middle;
+      width: 220px;
+      text-align: left;
+      padding: 25px 0;
+    }
+    img {
+      width: 91px;
+      display: inline-block;
+      margin: 7px 15px 7px 0;
+      position: relative;
+      z-index: 1;
+      vertical-align: middle;
+    }
+    span.infomenu {
+      width: 30px;
+      height: 30px;
+      background-image: url(/images/sprites.png);
+      background-position: -185px -343px;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    span.white {
+      display: block;
+      width: 145px;
+      white-space: nowrap;
+      background: #fff;
+      color: #f1505f;
+      font-weight: bold;
+      font-size: 14px;
+      box-sizing: border-box;
+      padding: 5px;
+      text-align: center;
+      margin-bottom: 5px;
+    }
+  }
+}
+
 #map-outer, #map {
   height: 100%;
 }
@@ -244,35 +246,38 @@
   top: 0;
 }
 
-.info{
-    width: 655px;
-    height: 700px;
-    //background-color: #007cc4;
-    // background: url('/images/backhotels.png');
-    position: absolute;
-    top: 150px;
-    left: 101px;
-    overflow: auto;
-}
-.infoinner{
-    padding: 9px 20px 50px;
-    color: #fff;
-}
-.infoinner p{
-    color: #fff;
-    font-size: 12px;
-    line-height: 14px;
-    margin-bottom: 15px;
-}
-.info .images img{
-    display: inline-block;
-    margin: 10px 15px 0 0;
-    vertical-align: top;
-}
-.info .images img:last-child{
-    margin-right: 0;
+.info {
+  width: 655px;
+  height: 700px;
+  //background-color: #007cc4;
+  // background: url('/images/backhotels.png');
+  position: absolute;
+  top: 150px;
+  left: 101px;
+  overflow: auto;
 }
 
+.infoinner {
+  padding: 9px 20px 50px;
+  color: #fff;
+}
+
+.infoinner p {
+  color: #fff;
+  font-size: 12px;
+  line-height: 14px;
+  margin-bottom: 15px;
+}
+
+.info .images img {
+  display: inline-block;
+  margin: 10px 15px 0 0;
+  vertical-align: top;
+}
+
+.info .images img:last-child {
+  margin-right: 0;
+}
 
 .mark {
   width: 32px;
@@ -280,7 +285,6 @@
   position: absolute;
   background-size: 100% auto;
 }
-
 
 .mark.hotelsmark {
   background-image: url(/images/mark-hotels.png);

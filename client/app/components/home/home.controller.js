@@ -1,10 +1,12 @@
 class HomeController {
-  constructor(dataService, $state, homeCats, $interval) {
+  constructor(dataService, $state, homeCats, $interval, $timeout, languageFactory) {
     "ngInject";
     this.$state = $state;
     this.homeCats = homeCats;
     this.service = dataService;
     this.$interval = $interval;
+    this.$timeout = $timeout;
+    this.languageFactory = languageFactory;
     this.ls = true;
     this.ttsClient = new TTSClient( false );
     this.ttsClient.SetDefaultLanguage( "Hebrew" );
@@ -28,8 +30,8 @@ class HomeController {
   }
 
   $postLink() {
-    console.log("post link");
-    $('.main').focus();
+    // console.log("post link");
+    // this.$timeout(() => $('.main').focus(), 50);
     //this.$interval(this.playSound.bind(this), 5000);
   }
 

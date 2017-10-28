@@ -1,31 +1,35 @@
-<div class="main home" ng-keydown="$ctrl.onKey($event)" tabindex="1">
+<div class="main home"
+     tabindex="1"
+     key-nav
+     ng-class="{contrast: $ctrl.isContrast, rtl: $ctrl.languageFactory.getLanguage() === 'he'}"
+>
     <ul class="top">
-        <li ng-click="$ctrl.$state.go('posts', {section: 'holiday', cat: ''})">
+        <li ng-click="$ctrl.$state.go('posts', {section: 'holiday', cat: ''})" nav-item="1">
             <a href="#" ng-bind-html="$ctrl.service.getSection('holiday').title"></a>
         </li>
-        <li ng-click="$ctrl.$state.go('posts', {section: 'hotels', cat: ''})">
+        <li ng-click="$ctrl.$state.go('posts', {section: 'hotels', cat: ''})" nav-item="2">
             <a href="#" ng-bind-html="$ctrl.service.getSection('hotels').title"></a>
         </li>
-        <li ng-click="$ctrl.$state.go('posts', {section: 'enjoying', cat: ''})">
+        <li ng-click="$ctrl.$state.go('posts', {section: 'enjoying', cat: ''})" nav-item="3">
             <a href="#" ng-bind-html="$ctrl.service.getSection('enjoying').title"></a>
         </li>
-        <li ng-click="$ctrl.$state.go('posts', {section: 'surroundings', cat: ''})">
+        <li ng-click="$ctrl.$state.go('posts', {section: 'surroundings', cat: ''})" nav-item="4">
             <a href="#" ng-bind-html="$ctrl.service.getSection('surroundings').title"></a>
         </li>
-        <li ng-click="$ctrl.$state.go('posts', {section: 'news', cat: ''})">
-            <a href="#" ng-bind-html="$ctrl.service.getSection('news').title"></a>
+        <li ng-click="$ctrl.$state.go('posts', {section: 'news', cat: ''})" nav-item="5">
+            <a href="#" ng-bind-html="$ctrl.service.getSection('news').title" ></a>
         </li>
-        <li ng-click="$ctrl.$state.go('contact')">
+        <li ng-click="$ctrl.$state.go('contact')" nav-item="6">
             <a href="#" translate-context="Noun" translate="">Contact</a>
         </li>
     </ul>
     <div class="small nav">
         <ul>
             <li class="earth">
-                <a href="" ui-sref="language"></a>
+                <a href="" ui-sref="language" nav-item="['Escape', 'Backspace']"></a>
             </li>
             <li class="disabled">
-                <a href=""></a>
+                <a href="" nav-item="'Enter'"></a>
             </li>
         </ul>
     </div>

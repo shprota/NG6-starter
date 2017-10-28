@@ -24,18 +24,21 @@ module.exports = {
   },
   plugins: [
     new AngularGetTextPlugin({
-/*
-      compileTranslations: { //optional
-        input: 'client/po/!*.po',
-        outputFolder: 'client/app/common/l10n',
-        format: 'javascript'
-      },
-*/
+      /*
+            compileTranslations: { //optional
+              input: 'client/po/!*.po',
+              outputFolder: 'client/app/common/l10n',
+              format: 'javascript'
+            },
+      */
       extractStrings: { //optional
         input: 'client/app/**/*.+(html|js)',
         destination: 'client/app/common/po/template.pot'
         //Any of the angular-gettext-tools Extractor options
       }
+    }),
+    new webpack.ProvidePlugin({
+      "window.jQuery": "jquery"
     }),
     // Injects bundles in your index.html instead of wiring all manually.
     // It also adds hash to all injected assets so we don't have problems

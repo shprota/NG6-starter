@@ -1,4 +1,4 @@
-<div class="main lang">
+<div class="main lang" key-nav>
     <div class="small nav">
         <ul class="rtl">
             <li class="disabled">
@@ -31,22 +31,22 @@
         </ul>
     </div>
     <ul class="top">
-        <li ng-click="$ctrl.home('en')">
+        <li ng-click="$ctrl.home('en')" nav-item="1">
             <a href="">
                 Welcome to Netanya
             </a>
         </li>
-        <li ng-click="$ctrl.home('ru')">
+        <li ng-click="$ctrl.home('ru')" nav-item="2">
             <a href="#">
                 Добро пожаловать в Нетанию
             </a>
         </li>
-        <li ng-click="$ctrl.home('fr')">
+        <li ng-click="$ctrl.home('fr')" nav-item="3">
             <a href="#">
                 Bienvenue à Netanya
             </a>
         </li>
-        <li ng-click="$ctrl.home('he')" class="rtl">
+        <li ng-click="$ctrl.home('he')" class="rtl" nav-item="4">
             <a href="">
             ברוכים הבאים
             לנתניה

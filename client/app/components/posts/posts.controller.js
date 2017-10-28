@@ -6,6 +6,7 @@ class PostsController {
     "ngInject";
 
     this.mapsUrl = mapsUrl;
+    this.NgMap = NgMap;
     this.$timeout = $timeout;
     this.$state = $state;
     this.languageFactory = languageFactory;
@@ -15,9 +16,6 @@ class PostsController {
     this.setCurrentContent = this._setCurrentContent.bind(this);
     this.backLink = 'home';
     this.isContrast = false;
-    NgMap.getMap().then(() => {
-      $('a[target]').remove();
-    });
   }
 
   $onInit() {
@@ -34,6 +32,11 @@ class PostsController {
     }
     if (this.section.secondLevel) {
       this.backLink = `posts({section: '${this.section.name}', cat: ''})`;
+    }
+    if (this.section.name !== 'news') {
+      this.NgMap.getMap().then(() => {
+        this.$timeout(() => $('a[target]').remove(), 1000);
+      });
     }
   }
 
@@ -56,7 +59,6 @@ class PostsController {
   }
 
   imagesLoaded(instance) {
-    console.log("images loaded", instance);
     this.$timeout(() => {
       let el = $(instance.elements[0]);
       let ns = el.getNiceScroll(0);
@@ -101,24 +103,16 @@ class PostsController {
       this.setSelInView();
       $('.postcontent').imagesLoaded().always(this.imagesLoaded.bind(this));
     });
-/*
-    this.$timeout(() => {
-      let ns = $(selector).getNiceScroll(0);
-      ns.resize();
-    }, 300);
-*/
+    /*
+        this.$timeout(() => {
+          let ns = $(selector).getNiceScroll(0);
+          ns.resize();
+        }, 300);
+    */
   }
 
   loadCat(cat) {
     this.$state.go('.', {section: this.section.name, cat: cat});
-  }
-
-  onKey(e) {
-    if (~['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'].indexOf(e.key)) {
-      console.log("Key: ", e);
-      let post = this.posts[parseInt(e.key)];
-      this._setCurrentContent(post);
-    }
   }
 }
 

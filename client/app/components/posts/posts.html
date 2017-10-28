@@ -1,8 +1,7 @@
 <div
   class="main posts {{$ctrl.section.name}}"
   ng-class="{contrast: $ctrl.isContrast, rtl: $ctrl.languageFactory.getLanguage() === 'he'}"
-  ng-keydown="$ctrl.onKey($event)"
-  tabindex="1"
+  key-nav
 >
   <div class="left" ng-class="{cat: $ctrl.section.isCat}">
     <div class="catimage" ng-if="$ctrl.section.isCat"></div>
@@ -14,7 +13,9 @@
             ng-click="$ctrl.setCurrentContent(post)"
             class="post"
             ng-class="{selected: $ctrl.post.id === post.id}"
-            ng-if="!$ctrl.section.isCat">
+            ng-if="!$ctrl.section.isCat"
+            nav-item="$index"
+        >
           <img class="menuimage" ng-src="{{post.thumbnail}}"/>
           <a href="#" ><span class="white" ng-bind="post.custom_fields.hwe_date[0]" ng-if="$ctrl.section.name === 'news'"></span> <span ng-bind-html="post.title"></span></a>
           <span class="infomenu"></span>
@@ -22,7 +23,7 @@
         <li ng-repeat="cat in $ctrl.posts"
             class="cat"
             ng-if="$ctrl.section.isCat">
-                  <a href="" ng-bind-html="cat.title" ng-click="$ctrl.loadCat(cat.id)"></a>
+                  <a href="" ng-bind-html="cat.title" ng-click="$ctrl.loadCat(cat.id)" nav-item="$index"></a>
         </li>
       </ul>
     </div>

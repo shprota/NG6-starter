@@ -4,7 +4,6 @@ class NavbarController {
   }
   $onInit() {
     this.backlink = this.backlink || 'home';
-    console.log("init Dis:",  this.dis)
   }
   toggleDisabled() {
     if (this.dis !== undefined) {

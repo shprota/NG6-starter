@@ -4,7 +4,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Project-Id-Version: \n"
 
-#: client/app/components/home/home.html:19
+#: client/app/components/home/home.html:23
 msgctxt "Noun"
 msgid "Contact"
 msgstr ""

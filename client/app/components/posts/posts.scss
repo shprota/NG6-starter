@@ -13,6 +13,7 @@
 }
 
 .holiday .left .define {
+  //background-color: #e06e00;
   background-color: #e06e00;
   background-position: 0 0;
   background-size: 660% auto;
@@ -52,10 +53,17 @@
 }
 
 .news {
-  background-image: url('/images/backnews.png');
+  //background-image: url('/images/backnews.png');
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#d65200+0,ee3543+100 */
+  background: #d65200; /* Old browsers */
+  background: -moz-linear-gradient(45deg,  #d65200 0%, #ee3543 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(45deg,  #d65200 0%,#ee3543 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(45deg,  #d65200 0%,#ee3543 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d65200', endColorstr='#ee3543',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 
   .define {
-    background-color: #f1505f;
+    //background-color: #f1505f;
+    background-color: transparent;
     background-position: -701px -27px;
     background-size: 950%;
   }
@@ -102,7 +110,6 @@
     .catimage {
       width: 365px;
       height: 247px;
-      background-color: #f00;
       display: inline-block;
     }
     .define, h1 {

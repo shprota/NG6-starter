@@ -4,6 +4,7 @@ import Language from './language/language';
 import Data from './data';
 import Navigation from './navigation';
 import Preloader from './preloader';
+import Expire from './expire';
 import "./common.scss";
 import "./animations.scss";
 let commonModule = angular.module('app.common', [
@@ -12,6 +13,7 @@ let commonModule = angular.module('app.common', [
   Data,
   Navigation,
   Preloader,
+  Expire
 ])
 .name;
 

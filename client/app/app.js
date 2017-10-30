@@ -29,9 +29,11 @@ angular.module('app', [
     // #how-to-configure-your-server-to-work-with-html5mode
     $locationProvider.html5Mode(true).hashPrefix('!');
   })
-  .run(($transitions) => {
+  .run(($transitions, expireService) => {
     "ngInject";
+    expireService.restart();
     $transitions.onStart({}, trans => {
+      expireService.restart();
       trans.promise.catch(e => {
         trans.router.stateService.go('language');
       });

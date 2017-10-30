@@ -2,7 +2,7 @@ import '../../../css/bootstrap.css';
 import '../../../css/img-gallery.css';
 
 class PostsController {
-  constructor(mapsUrl, NgMap, $timeout, $state, $window, languageFactory, $element, $rootScope) {
+  constructor(mapsUrl, NgMap, $timeout, $state, $window, languageFactory, expireService, $element, $rootScope) {
     "ngInject";
 
     this.mapsUrl = mapsUrl;
@@ -10,6 +10,7 @@ class PostsController {
     this.$timeout = $timeout;
     this.$state = $state;
     this.languageFactory = languageFactory;
+    this.expireService = expireService;
     this.$element = $element;
     this.$rootScope = $rootScope;
     $window.scrollTo(0, 0);
@@ -65,7 +66,9 @@ class PostsController {
       if (!ns) {
         ns = el.parents('.nicescroll').getNiceScroll(0);
       }
-      ns.resize();
+      if (ns) {
+        ns.resize();
+      }
     });
   }
 
@@ -90,6 +93,7 @@ class PostsController {
   _setCurrentContent(ev, post) {
     post = post || ev;
     //let ns = $('.right .inner').getNiceScroll(0);
+    this.expireService.restart();
 
     const selector = this.section.name === 'news' ? '.right .inner' : '.info';
     $(selector).scrollTop(0);

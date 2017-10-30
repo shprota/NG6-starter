@@ -1,6 +1,13 @@
 .home {
-  background: url('/images/backhome.png');
-  background-size: cover;
+  //background: url('/images/backhome.png');
+  //background-size: cover;
+
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#0773c2+53,083062+100,0867b8+100,5190e3+100 */
+  background: #0773c2; /* Old browsers */
+  background: -moz-linear-gradient(45deg,  #0773c2 53%, #083062 100%, #0867b8 100%, #5190e3 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(45deg,  #0773c2 53%,#083062 100%,#0867b8 100%,#5190e3 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(45deg,  #0773c2 53%,#083062 100%,#0867b8 100%,#5190e3 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0773c2', endColorstr='#5190e3',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 
   ul.top {
     text-align: center;

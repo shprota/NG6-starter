@@ -1,5 +1,5 @@
 class HomeController {
-  constructor(dataService, $state, homeCats, $interval, $timeout, languageFactory) {
+  constructor(dataService, $state, homeCats, $interval, $timeout, languageFactory, expireService) {
     "ngInject";
     this.$state = $state;
     this.homeCats = homeCats;
@@ -7,6 +7,7 @@ class HomeController {
     this.$interval = $interval;
     this.$timeout = $timeout;
     this.languageFactory = languageFactory;
+    this.expireService = expireService;
     this.ls = true;
     this.ttsClient = new TTSClient( false );
     this.ttsClient.SetDefaultLanguage( "Hebrew" );
@@ -36,7 +37,7 @@ class HomeController {
   }
 
   onKey(e) {
-    console.log("Key", e);
+    this.expireService.restart();
     switch (e.key) {
       case '1':
         this.$state.go('posts', {section: 'holiday', cat: ''});

@@ -9,6 +9,6 @@ msgctxt "Noun"
 msgid "Contact"
 msgstr ""
 
-#: client/app/components/language/language.controller.js:11
+#: client/app/components/language/language.controller.js:12
 msgid "Welcome to Netanya!. For English press 1"
 msgstr ""

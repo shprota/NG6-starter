@@ -182,6 +182,11 @@
     .left .define {
       background-color: #000;
     }
+    *, img {
+      filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
+      -webkit-filter: grayscale(1);
+      filter: grayscale(1);
+    }
   }
 }
 

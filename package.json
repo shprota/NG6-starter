@@ -17,7 +17,8 @@
     "jquery": "^3.2.1",
     "jquery.nicescroll": "^3.7.6",
     "ngmap": "^1.18.4",
-    "normalize.css": "^3.0.3"
+    "normalize.css": "^3.0.3",
+    "socket.io": "^2.0.4"
   },
   "devDependencies": {
     "angular-gettext-cli": "^1.2.0",

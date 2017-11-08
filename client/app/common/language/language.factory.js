@@ -8,7 +8,7 @@ class LanguageFactory {
     this.langTable = {
       en: 'USEnglish',
       ru: 'Russian',
-      fr: 'French',
+      fr: 'Hebrew',
       he: 'Hebrew',
     };
     this.ttsClient = new TTSClient( false );
@@ -29,8 +29,9 @@ class LanguageFactory {
 
   say(text, lang, scope) {
     lang = lang || this.language;
-    let sayWhat = this.gettextCatalog.getStringFormFor(lang, text, 1) || text;
+   let sayWhat = this.gettextCatalog.getStringFormFor(lang, text, 1) || text;
     sayWhat = scope ? $interpolate(sayWhat)(scope) : sayWhat;
+     lang = this.langTable[lang];
     this.ttsClient.Speak(sayWhat, lang);
   }
 }

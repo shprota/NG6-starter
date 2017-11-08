@@ -38,6 +38,7 @@ class LanguageFactory {
     lang = lang || this.language;
     let sayWhat = this.gettextCatalog.getStringFormFor(lang, text, 1) || text;
     sayWhat = scope ? $interpolate(sayWhat)(scope) : sayWhat;
+
     if (lang === 'fr') {
       lang = 'French';
     } else {

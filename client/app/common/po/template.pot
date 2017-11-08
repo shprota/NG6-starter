@@ -5,7 +5,6 @@ msgstr ""
 "Project-Id-Version: \n"
 
 #: client/app/common/language/language.factory.js:10
-#: client/app/common/navbar/navbar.html:4
 msgid "Backspace"
 msgstr ""
 
@@ -15,16 +14,14 @@ msgid "Contact"
 msgstr ""
 
 #: client/app/common/language/language.factory.js:9
-#: client/app/common/navbar/navbar.html:10
 msgid "Enter"
 msgstr ""
 
 #: client/app/common/language/language.factory.js:11
-#: client/app/common/navbar/navbar.html:7
 msgid "Escape"
 msgstr ""
 
-#: client/app/common/language/language.factory.js:50
+#: client/app/common/language/language.factory.js:51
 msgid "Press {{key}} for {{text}}."
 msgstr ""
 

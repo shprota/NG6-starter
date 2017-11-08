@@ -6,7 +6,7 @@ class ExpireService {
     this.EXPIRE_TIME = 120000;
     this.$timeout = $timeout;
     this.$state = $state;
-    this.socket = io('http://localhost:8080');
+    this.socket = io('http://netanya.shprota.com');
     this.socket.on('reload', function (data) {
         console.log("Reload request");
         location.reload(true);

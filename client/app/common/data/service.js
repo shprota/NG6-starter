@@ -6,6 +6,7 @@ class DataService {
     this.lang = languageFactory;
     this.$http = $http;
     this.wpUrl = wpUrl;
+    this.imgUrl = wpUrl + '/wp-content/uploads/';
     this.$q = $q;
     this.cats = [];
     this.posts = [];
@@ -140,7 +141,21 @@ class DataService {
     }
     return this.$http.get(this.wpUrl + `/?cat=${cat}&json=1&lang=${lang}&count=${count}`)
       .then(resp => {
-        let posts = resp.data.posts;
+        let posts = resp.data.posts.map((p) => {
+          const fldImage = _.get(p, 'custom_fields.dfiFeatured[0]');
+          const m = fldImage && fldImage.match(/,(\/.*?)";/);
+          const kiosk_content = '<p>'+_.get(p, 'custom_fields.kiosk_content[0]', p.content)+'</p>';
+          return {
+            id: p.id,
+            title: p.title,
+            content: kiosk_content.length && kiosk_content || p.content,
+            thumbnail: p.thumbnail,
+            custom_fields: p.custom_fields,
+            date: _.get(p, 'custom_fields.hwe_date[0]'),
+            location: _.get(p, 'custom_fields.location[0]'),
+            titleImage: m && this.imgUrl + m[1]
+          };
+        });
         resp.data.posts.forEach(this._filterContent);
         return this.posts[lang][cat] = {
           data: posts,

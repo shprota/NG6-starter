@@ -1,21 +1,45 @@
 msgid ""
 msgstr ""
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
 "Project-Id-Version: GoNetanya\n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: \n"
 "Last-Translator: Shprota <shprota@shprota.com>\n"
 "Language-Team: \n"
-"MIME-Version: 1.0\n"
-"X-Generator: Poedit 1.5.4\n"
 "Language: he\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.7.1\n"
 
-#: client/app/components/home/home.html:19
+#: client/app/common/language/language.factory.js:10
+msgid "Backspace"
+msgstr "תיקון"
+
+#: client/app/components/home/home.html:23
 msgctxt "Noun"
 msgid "Contact"
 msgstr "צור קשר"
 
-#: client/app/components/language/language.controller.js:11
+#: client/app/common/language/language.factory.js:9
+msgid "Enter"
+msgstr "אישור"
+
+#: client/app/common/language/language.factory.js:11
+msgid "Escape"
+msgstr "ביטול"
+
+#: client/app/common/language/language.factory.js:50
+msgid "Press {{key}} for {{text}}."
+msgstr "לחצו {{key}} ל{{text}}."
+
+#: client/app/components/language/language.controller.js:12
 msgid "Welcome to Netanya!. For English press 1"
 msgstr "ברוכים הבאים לנתניה. לעברית לחצו 4"
+
+#: client/app/common/navbar/navbar.html:7
+msgid "language selection"
+msgstr "תפריט שפות"
+
+#: client/app/common/navbar/navbar.html:4
+msgid "previous screen"
+msgstr "חזרה למסך קודם"

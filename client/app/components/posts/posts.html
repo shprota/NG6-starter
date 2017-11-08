@@ -17,7 +17,7 @@
             nav-item="$index"
         >
           <img class="menuimage" ng-src="{{post.thumbnail}}"/>
-          <a href="#" ><span class="white" ng-bind="post.custom_fields.hwe_date[0]" ng-if="$ctrl.section.name === 'news'"></span> <span ng-bind-html="post.title"></span></a>
+          <a href="#" ><span class="white" ng-bind="post.date" ng-if="$ctrl.section.name === 'news'"></span> <span ng-bind-html="post.title"></span></a>
           <span class="infomenu"></span>
         </li>
         <li ng-repeat="cat in $ctrl.posts"
@@ -46,7 +46,7 @@
       >
         <custom-marker ng-repeat="m in $ctrl.locations"
                        id="custom-marker-{{m.id}}"
-                       position="{{m.custom_fields.location[0]}}"
+                       position="{{m.location}}"
                        on-click="$ctrl.setCurrentContent(m)"
         >
           <div class="mark" ng-class="$ctrl.section.name+'mark'"></div>
@@ -54,14 +54,14 @@
       </ng-map>
     </div>
     <div class="inner nicescroll" ng-if="$ctrl.section.name == 'news'">
-      <div class="date" ng-bind="$ctrl.post.custom_fields.hwe_date[0]"></div>
+      <div class="date" ng-bind="$ctrl.post.date"></div>
       <h2 ng-bind-html="$ctrl.post.title"></h2>
       <div class="postcontent" ng-bind-html="$ctrl.post.content"></div>
     </div>
 
     <div id="info-mask" ng-click="$ctrl.showItem = false" ng-show="$ctrl.showItem"></div>
     <div class="info nicescroll" ng-show="$ctrl.showItem">
-      <img ng-src="{{$ctrl.postCover()}}" ng-if="$ctrl.postCover()"/>
+      <img class="title-image" ng-src="{{$ctrl.post.titleImage}}" ng-if="$ctrl.post.titleImage"/>
       <div class="infoinner">
         <h2 id="infotitle" ng-bind-html="$ctrl.post.title"></h2>
         <div class="postcontent" ng-bind-html="$ctrl.post.content"></div>

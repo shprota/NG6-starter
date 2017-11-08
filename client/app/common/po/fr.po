@@ -9,13 +9,40 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.4\n"
+"X-Generator: Poedit 1.8.7.1\n"
 
-#: client/app/components/home/home.html:19
+#: client/app/common/language/language.factory.js:10
+#: client/app/common/navbar/navbar.html:4
+msgid "Backspace"
+msgstr ""
+
+#: client/app/components/home/home.html:23
 msgctxt "Noun"
 msgid "Contact"
 msgstr "Contact"
 
-#: client/app/components/language/language.controller.js:11
+#: client/app/common/language/language.factory.js:9
+#: client/app/common/navbar/navbar.html:10
+msgid "Enter"
+msgstr ""
+
+#: client/app/common/language/language.factory.js:11
+#: client/app/common/navbar/navbar.html:7
+msgid "Escape"
+msgstr ""
+
+#: client/app/common/language/language.factory.js:50
+msgid "Press {{key}} for {{text}}."
+msgstr "Appuyez sur {{key}} pour {{text}}."
+
+#: client/app/components/language/language.controller.js:12
 msgid "Welcome to Netanya!. For English press 1"
 msgstr "Bienvenue à Netanya!. Cliquez 3 pour le français"
+
+#: client/app/common/navbar/navbar.html:7
+msgid "language selection"
+msgstr "Dans le menu des langues"
+
+#: client/app/common/navbar/navbar.html:4
+msgid "previous screen"
+msgstr "Pour revenir à l'écran précédent"

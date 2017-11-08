@@ -1,4 +1,4 @@
-let NavigationDirective = function ($timeout) {
+let NavigationDirective = function ($timeout, languageFactory) {
   "ngInject";
   let directive = {
     link: link,
@@ -8,6 +8,8 @@ let NavigationDirective = function ($timeout) {
   };
   let navs = {};
   let scope = null;
+  let menu = [];
+  let navLen = 1;
   return directive;
 
   function link(scope, el, attrs) {
@@ -15,14 +17,31 @@ let NavigationDirective = function ($timeout) {
     $el.on('keydown', onKeydown);
     $el.attr('tabindex', 1);
     $timeout(() => $el.focus());
+    if (!el.attr('no-play')) {
+      $timeout(() => {
+        _.forIn(navs, (el, k) => {
+          const key = isNaN(parseInt(k)) ? k : '0'.repeat(navLen - k.length) + k;
+          const text = el.attr('nav-text') || el.text().trim();
+          if (text) {
+            menu.push({
+              key: key,
+              text: text
+            });
+          }
+        });
+        console.log(menu);
+        languageFactory.playMenu(menu);
+      }, 100);
+    }
   }
 
   function controller($scope) {
     "ngInject";
     scope = $scope;
-    let navLen = 1;
+    navLen = 1;
     let navBuf = "";
     navs = {};
+    menu = [];
 
     this.addNav = function (key, el) {
       if (!angular.isArray(key)) {

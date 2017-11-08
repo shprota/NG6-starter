@@ -2,7 +2,7 @@ import '../../../css/bootstrap.css';
 import '../../../css/img-gallery.css';
 
 class PostsController {
-  constructor(mapsUrl, NgMap, $timeout, $state, $window, languageFactory, expireService, $element, $rootScope) {
+  constructor(mapsUrl, NgMap, $timeout, $state, $window, languageFactory, expireService, wpUrl, $element, $rootScope) {
     "ngInject";
 
     this.mapsUrl = mapsUrl;
@@ -11,6 +11,7 @@ class PostsController {
     this.$state = $state;
     this.languageFactory = languageFactory;
     this.expireService = expireService;
+    this.imgUrl = wpUrl + '/wp-content/uploads/';
     this.$element = $element;
     this.$rootScope = $rootScope;
     $window.scrollTo(0, 0);
@@ -29,7 +30,7 @@ class PostsController {
     }
     this.post = this.posts[0];
     if (!this.section.isCat && this.section.name !== 'news') {
-      this.locations = this.posts.filter(p => p.custom_fields.location && p.custom_fields.location.length);
+      this.locations = this.posts.filter(p => p.location && p.custom_fields.location.length);
     }
     if (this.section.secondLevel) {
       this.backLink = `posts({section: '${this.section.name}', cat: ''})`;
@@ -49,13 +50,24 @@ class PostsController {
         $(e).niceScroll({
           emulatetouch: true,
           cursorcolor: '#888',
-          autohidemode: 'scroll',
+          autohidemode: false,
           bouncescroll: true,
           cursordragontouch: true,
           preventmultitouchscrolling: false,
+          cursorwidth: 10,
+          preservenativescrolling: false,
+          nativeparentscrolling: false,
+          horizrailenabled: false,
+          oneaxismousemode: false,
         });
         $(e).imagesLoaded().always(this.imagesLoaded.bind(this));
       });
+    });
+  }
+
+  $onDestroy() {
+    $('.nicescroll').each((i, e) => {
+      $(e).getNiceScroll().remove();
     });
   }
 
@@ -107,12 +119,11 @@ class PostsController {
       this.setSelInView();
       $('.postcontent').imagesLoaded().always(this.imagesLoaded.bind(this));
     });
-    /*
-        this.$timeout(() => {
-          let ns = $(selector).getNiceScroll(0);
-          ns.resize();
-        }, 300);
-    */
+
+    this.$timeout(() => {
+      this.languageFactory.say(post.content.replace(/<[^>]+>/gm, ''));
+    }, 300);
+
   }
 
   loadCat(cat) {

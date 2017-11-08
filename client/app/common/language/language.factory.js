@@ -1,9 +1,16 @@
 class LanguageFactory {
-  constructor(gettextCatalog) {
+  constructor(gettextCatalog, gettext) {
     "ngInject";
     this.language = 'en';
     this.gettextCatalog = gettextCatalog;
     this.gettextCatalog.setCurrentLanguage(this.language);
+
+    // Placeholders
+    gettext('Enter');
+    gettext('Backspace');
+    gettext('Escape');
+    this.gettext = gettext;
+
 
     this.langTable = {
       en: 'USEnglish',
@@ -11,8 +18,8 @@ class LanguageFactory {
       fr: 'Hebrew',
       he: 'Hebrew',
     };
-    this.ttsClient = new TTSClient( false );
-    this.ttsClient.SetDefaultLanguage( 'USEnglish' );
+    this.ttsClient = new TTSClient(false);
+    this.ttsClient.SetDefaultLanguage('Hebrew');
 
   }
 
@@ -20,19 +27,36 @@ class LanguageFactory {
     return this.language;
   }
 
-  setLanguage(lang)  {
-     this.language = lang;
-     this.gettextCatalog.setCurrentLanguage(lang);
-     this.ttsClient.SetDefaultLanguage( this.langTable[lang] );
+  setLanguage(lang) {
+    this.language = lang;
+    this.gettextCatalog.setCurrentLanguage(lang);
+    this.ttsClient.SetDefaultLanguage(this.langTable[lang]);
 
   }
 
   say(text, lang, scope) {
     lang = lang || this.language;
-   let sayWhat = this.gettextCatalog.getStringFormFor(lang, text, 1) || text;
+    let sayWhat = this.gettextCatalog.getStringFormFor(lang, text, 1) || text;
     sayWhat = scope ? $interpolate(sayWhat)(scope) : sayWhat;
-     lang = this.langTable[lang];
+    if (lang === 'fr') {
+      lang = 'French';
+    } else {
+      lang = this.langTable[lang];
+    }
     this.ttsClient.Speak(sayWhat, lang);
+  }
+
+  playMenu(menu) {
+    const format = this.gettext("Press {{key}} for {{text}}.");
+    let text = "";
+    let lang = this.language;
+    menu.forEach(m => text += " " + this.gettextCatalog.getString(format, m));
+    if (lang === 'fr') {
+      lang = 'French';
+    } else {
+      lang = this.langTable[lang];
+    }
+    this.ttsClient.Speak(text, lang);
   }
 }
 

@@ -104,6 +104,7 @@ class DataService {
     el.find('script').remove();
     el.find('a').each((i, a) => a.outerHTML = $(a).html());
     item.content = el.html();
+    return item;
   }
 
   _filterCategories(parent, lang = false) {
@@ -141,11 +142,12 @@ class DataService {
     }
     return this.$http.get(this.wpUrl + `/?cat=${cat}&json=1&lang=${lang}&count=${count}`)
       .then(resp => {
+        //resp.data.posts.forEach(this._filterContent);
         let posts = resp.data.posts.map((p) => {
           const fldImage = _.get(p, 'custom_fields.dfiFeatured[0]');
           const m = fldImage && fldImage.match(/,(\/.*?)";/);
           const kiosk_content = '<p>'+_.get(p, 'custom_fields.kiosk_content[0]', p.content)+'</p>';
-          return {
+          return this._filterContent({
             id: p.id,
             title: p.title,
             content: kiosk_content.length && kiosk_content || p.content,
@@ -154,9 +156,8 @@ class DataService {
             date: _.get(p, 'custom_fields.hwe_date[0]'),
             location: _.get(p, 'custom_fields.location[0]'),
             titleImage: m && this.imgUrl + m[1]
-          };
+          });
         });
-        resp.data.posts.forEach(this._filterContent);
         return this.posts[lang][cat] = {
           data: posts,
           title: resp.data.category.title,

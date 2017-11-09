@@ -1,7 +1,7 @@
 class LanguageFactory {
   constructor(gettextCatalog, gettext) {
     "ngInject";
-    this.language = 'en';
+    this.language = 'he';
     this.gettextCatalog = gettextCatalog;
     this.gettextCatalog.setCurrentLanguage(this.language);
 

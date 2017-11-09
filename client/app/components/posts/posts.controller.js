@@ -55,11 +55,14 @@ class PostsController {
           bouncescroll: true,
           cursordragontouch: true,
           preventmultitouchscrolling: false,
+/*
           cursorwidth: 10,
           preservenativescrolling: false,
           nativeparentscrolling: false,
           horizrailenabled: false,
           oneaxismousemode: false,
+          rtlmode: true //this.languageFactory.getLanguage() === 'he'
+*/
         });
         $(e).imagesLoaded().always(this.imagesLoaded.bind(this));
       });

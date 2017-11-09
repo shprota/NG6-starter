@@ -21,7 +21,7 @@ msgstr ""
 msgid "Escape"
 msgstr ""
 
-#: client/app/common/language/language.factory.js:51
+#: client/app/common/language/language.factory.js:57
 msgid "Press {{key}} for {{text}}."
 msgstr ""
 

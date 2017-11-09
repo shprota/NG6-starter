@@ -31,6 +31,7 @@ class PostsController {
     this.post = this.posts[0];
     if (!this.section.isCat && this.section.name !== 'news') {
       this.locations = this.posts.filter(p => p.location && p.custom_fields.location.length);
+      console.log("Locations: ", this.locations);
     }
     if (this.section.secondLevel) {
       this.backLink = `posts({section: '${this.section.name}', cat: ''})`;

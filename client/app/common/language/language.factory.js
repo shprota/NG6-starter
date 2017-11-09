@@ -47,6 +47,12 @@ class LanguageFactory {
     this.ttsClient.Speak(sayWhat, lang);
   }
 
+  stop() {
+    if (this.ttsClient && this.ttsClient.stop) {
+      this.ttsClient.stop();
+    }
+  }
+
   playMenu(menu) {
     const format = this.gettext("Press {{key}} for {{text}}.");
     let text = "";

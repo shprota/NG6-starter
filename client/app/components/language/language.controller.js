@@ -6,7 +6,7 @@ class LanguageController {
     this.expireService = expireService;
     this.$state = $state;
     this.$interval = $interval;
-    this.speechTask = $interval(this.speak.bind(this), 5000);
+    this.speechTask = $interval(this.speak.bind(this), 6000);
     this.langNo = 0;
     this.langs = Object.keys(languageFactory.langTable);
     this.welcome = gettext("Welcome to Netanya!. For English press 1");

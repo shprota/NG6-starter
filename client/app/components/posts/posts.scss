@@ -307,6 +307,20 @@ ul.leftmenu {
   }
 }
 
+.mark.enjoyingmark {
+  background-image: url(/images/mark-enjoying.png);
+  &.pink {
+    background-image: url(/images/mark-enjoying-pink.png);
+  }
+}
+
+.mark.holiday {
+  background-image: url(/images/mark-holiday.png);
+  &.pink {
+    background-image: url(/images/mark-holiday-pink.png);
+  }
+}
+
 img.title-image {
   width: 100%;
 }

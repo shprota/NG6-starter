@@ -12,6 +12,7 @@ msgstr ""
 "X-Generator: Poedit 1.8.7.1\n"
 
 #: client/app/common/language/language.factory.js:10
+#: client/app/common/navbar/navbar.html:4
 msgid "Backspace"
 msgstr "תיקון"
 
@@ -21,10 +22,12 @@ msgid "Contact"
 msgstr "צור קשר"
 
 #: client/app/common/language/language.factory.js:9
+#: client/app/common/navbar/navbar.html:10
 msgid "Enter"
 msgstr "אישור"
 
 #: client/app/common/language/language.factory.js:11
+#: client/app/common/navbar/navbar.html:7
 msgid "Escape"
 msgstr "ביטול"
 

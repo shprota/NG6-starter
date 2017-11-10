@@ -148,6 +148,7 @@
         width: 100%;
       }
       ul.leftmenu {
+        padding-right: 10px;
         li {
           a {
             text-align: center;
@@ -169,7 +170,7 @@
         li a {
           display: inline-block;
           vertical-align: middle;
-          width: 220px;
+          width: 210px;
         }
       }
     }
@@ -208,7 +209,7 @@ ul.leftmenu {
       font-size: 19px;
       display: inline-block;
       vertical-align: middle;
-      width: 220px;
+      width: 210px;
       text-align: left;
       padding: 25px 0;
     }
@@ -329,6 +330,11 @@ img.title-image {
 .rtl .left h1 {
   padding: 0 14px 0 0;
   text-align: right;
+}
+
+.rtl ul.leftmenu {
+  padding-right: 0;
+  padding-left: 10px;
 }
 
 .rtl ul.leftmenu li a {

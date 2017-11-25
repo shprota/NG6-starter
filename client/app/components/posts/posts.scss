@@ -2,6 +2,10 @@
   background-image: url('/images/backhotels.png');
 }
 
+.hotels.rtl, .hotels.rtl .info {
+  background-image: url('/images/backhotels_rtl.png');
+}
+
 .hotels .left .define {
   background-color: #007cc4;
   background-position: -194px -28px;
@@ -10,6 +14,10 @@
 
 .holiday, .holiday .info {
   background-image: url('/images/backholiday.png');
+}
+
+.holiday.rtl, .holiday.rtl .info {
+  background-image: url('/images/backholiday_rtl.png');
 }
 
 .holiday .left .define {
@@ -21,7 +29,6 @@
 
 .holiday .catimage {
   background: url('/images/activeholiday.jpg');
-
 }
 
 .surroundings, .surroundings .info {
@@ -100,7 +107,7 @@
       }
       p {
         margin-bottom: 17px;
-        font-size: 14px;
+        //font-size: 14px;
         line-height: 160%;
       }
     }
@@ -189,6 +196,30 @@
       filter: grayscale(1);
     }
   }
+  &.large {
+    .left.cat h1, .left h1 {
+      font-size: 32px;
+    }
+    ul.leftmenu li {
+      a {
+        font-size: 31px;
+      }
+      span.white {
+        font-size: 17px;
+      }
+      &.cat {
+        a {
+          font-size: 31px;
+        }
+      }
+    }
+    p, .postcontent p {
+      font-size: 150%;
+    }
+    .inner .date {
+      font-size: 34px;
+    }
+  }
 }
 
 ul.leftmenu {
@@ -271,7 +302,7 @@ ul.leftmenu {
 }
 
 .infoinner {
-  padding: 9px 20px 50px;
+  padding: 9px 20px 20px;
   color: #fff;
   font-size: 14px;
   line-height: 160%;
@@ -338,7 +369,7 @@ img.title-image {
 }
 
 .rtl ul.leftmenu li a {
-  text-align: right !important;
+  text-align: right;
 }
 
 .rtl ul.leftmenu li img {

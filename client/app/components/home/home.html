@@ -1,7 +1,7 @@
 <div class="main home"
      tabindex="1"
      key-nav
-     ng-class="{contrast: $ctrl.isContrast, rtl: $ctrl.languageFactory.getLanguage() === 'he'}"
+     ng-class="{rtl: $ctrl.languageFactory.getLanguage() === 'he', contrast: $ctrl.abService.contrast, large: $ctrl.abService.large}"
 >
     <ul class="top">
         <li ng-click="$ctrl.$state.go('posts', {section: 'holiday', cat: ''})" nav-item="1">
@@ -29,8 +29,9 @@
                 <a href="" ui-sref="language" nav-item="['Escape', 'Backspace']"></a>
             </li>
             <li class="disabled">
-                <a href="" nav-item="'Enter'"></a>
+                <a href="" nav-item="'Enter'" ng-click="showAb()"></a>
             </li>
         </ul>
     </div>
+    <ab-menu></ab-menu>
 </div>

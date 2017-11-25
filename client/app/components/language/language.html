@@ -1,8 +1,9 @@
-<div class="main lang" key-nav no-play="true">
+<div class="main lang" key-nav no-play="true"
+ng-class="{contrast: $ctrl.abService.contrast, large: $ctrl.abService.large}">
     <div class="small nav">
         <ul class="rtl">
             <li class="disabled">
-                <a href="#"></a>
+                <a href="" ng-click="showAb()" nav-item="'Enter'"></a>
 <!--
                 <ul>
                     <li>
@@ -55,4 +56,5 @@
             </a>
         </li>
     </ul>
+    <ab-menu></ab-menu>
 </div>

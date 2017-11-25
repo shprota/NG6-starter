@@ -4,10 +4,25 @@
 
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#0773c2+53,083062+100,0867b8+100,5190e3+100 */
   background: #0773c2; /* Old browsers */
-  background: -moz-linear-gradient(45deg,  #0773c2 53%, #083062 100%, #0867b8 100%, #5190e3 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(45deg,  #0773c2 53%,#083062 100%,#0867b8 100%,#5190e3 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(45deg,  #0773c2 53%,#083062 100%,#0867b8 100%,#5190e3 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0773c2', endColorstr='#5190e3',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+  background: -moz-linear-gradient(45deg, #0773c2 53%, #083062 100%, #0867b8 100%, #5190e3 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(45deg, #0773c2 53%, #083062 100%, #0867b8 100%, #5190e3 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(45deg, #0773c2 53%, #083062 100%, #0867b8 100%, #5190e3 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0773c2', endColorstr='#5190e3', GradientType=1); /* IE6-9 fallback on horizontal gradient */
+
+  &.contrast {
+    background: #000;
+    .info {
+      background: #000;
+    }
+    .left .define {
+      background-color: #000;
+    }
+    * {
+      filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
+      -webkit-filter: grayscale(1);
+      filter: grayscale(1);
+    }
+  }
 
   ul.top {
     text-align: center;
@@ -71,7 +86,7 @@
           content: "2";
         }
         &:before {
-          background-position:-353px -501px;
+          background-position: -353px -501px;
         }
       }
 
@@ -89,7 +104,7 @@
           content: "4";
         }
         &:before {
-          background-position:-945px -501px;
+          background-position: -945px -501px;
         }
       }
 
@@ -98,7 +113,7 @@
           content: "5";
         }
         &:before {
-          background-position:-352px -823px;
+          background-position: -352px -823px;
         }
       }
 

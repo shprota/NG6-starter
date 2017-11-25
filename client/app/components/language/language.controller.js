@@ -1,11 +1,12 @@
 class LanguageController {
-  constructor(languageFactory, gettext, expireService, $state, $interval) {
+  constructor(languageFactory, gettext, expireService, $state, $interval, abService) {
     "ngInject";
     this.name = 'language';
     this.lng = languageFactory;
     this.expireService = expireService;
     this.$state = $state;
     this.$interval = $interval;
+    this.abService = abService;
     this.speechTask = $interval(this.speak.bind(this), 6000);
     this.langNo = 0;
     this.langs = Object.keys(languageFactory.langTable);

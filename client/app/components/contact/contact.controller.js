@@ -1,5 +1,7 @@
 class ContactController {
-  constructor() {
+  constructor(abService) {
+    'ngInject';
+    this.abService = abService;
     this.name = 'contact';
   }
 }

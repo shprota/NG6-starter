@@ -10,7 +10,6 @@ function NavItemDirective($timeout) {
 
   function link(scope, el, attrs, navCtl) {
     navCtl.addNav(scope.navItem, el);
-    $timeout(() => console.log("nav: ", el.text().trim()));
   }
 }
 

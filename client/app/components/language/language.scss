@@ -1,6 +1,21 @@
 .lang {
   background: url('/images/backlang.png');
   background-size: cover;
+  &.contrast {
+    background: #000;
+    .info {
+      background: #000;
+    }
+    .left .define {
+      background-color: #000;
+    }
+    * {
+      filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
+      -webkit-filter: grayscale(1);
+      filter: grayscale(1);
+    }
+  }
+
   li {
     a {
       color: #fff;

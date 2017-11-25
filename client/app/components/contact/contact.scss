@@ -1,18 +1,32 @@
 .contacts {
-    background: url('/images/backcontacts.png');
-    background-size: cover;
-    padding-top: 81px;
-    text-align: center;
-}
-.contacts img{
+  background: url('/images/backcontacts.png');
+  background-size: cover;
+  padding-top: 81px;
+  text-align: center;
+  img {
     margin-bottom: 54px;
-}
-.contacts p{
+  }
+  p {
     color: #fff;
     font-size: 29px;
     padding-bottom: 11px;
+  }
+  &.contrast {
+    background: #000;
+    .info {
+      background: #000;
+    }
+    .left .define {
+      background-color: #000;
+    }
+    *, img {
+      filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
+      -webkit-filter: grayscale(1);
+      filter: grayscale(1);
+    }
+  }
 }
-/*IDISH*/
+
 .contacts.rtl {
-    background: url('/images/backcontactsrtl.png');
+  background: url('/images/backcontactsrtl.png');
 }

@@ -1,5 +1,5 @@
 class HomeController {
-  constructor(dataService, $state, homeCats, $interval, $timeout, languageFactory, expireService) {
+  constructor(dataService, $state, homeCats, $interval, $timeout, languageFactory, expireService, abService) {
     "ngInject";
     this.$state = $state;
     this.homeCats = homeCats;
@@ -8,15 +8,8 @@ class HomeController {
     this.$timeout = $timeout;
     this.languageFactory = languageFactory;
     this.expireService = expireService;
+    this.abService = abService;
     this.ls = true;
-  }
-
-  playSound() {
-
-  }
-
-  $postLink() {
-    this.playSound();
   }
 }
 

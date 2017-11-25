@@ -29,7 +29,6 @@ let NavigationDirective = function ($timeout, languageFactory) {
             });
           }
         });
-        console.log(menu);
         languageFactory.playMenu(menu);
       }, 100);
     }

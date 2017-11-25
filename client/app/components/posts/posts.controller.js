@@ -2,7 +2,7 @@ import '../../../css/bootstrap.css';
 import '../../../css/img-gallery.css';
 
 class PostsController {
-  constructor(mapsUrl, NgMap, $timeout, $state, $window, languageFactory, expireService, wpUrl, $element, $rootScope) {
+  constructor(mapsUrl, NgMap, $timeout, $state, $window, languageFactory, expireService, wpUrl, $element, $rootScope, abService) {
     "ngInject";
 
     this.mapsUrl = mapsUrl;
@@ -14,6 +14,7 @@ class PostsController {
     this.imgUrl = wpUrl + '/wp-content/uploads/';
     this.$element = $element;
     this.$rootScope = $rootScope;
+    this.abService = abService;
     $window.scrollTo(0, 0);
     this.setCurrentContent = this._setCurrentContent.bind(this);
     this.backLink = 'home';
@@ -30,8 +31,7 @@ class PostsController {
     }
     this.post = this.posts[0];
     if (!this.section.isCat && this.section.name !== 'news') {
-      this.locations = this.posts.filter(p => p.location && p.custom_fields.location.length);
-      console.log("Locations: ", this.locations);
+      this.locations = this.posts.filter(p => p.location && p.location.length);
     }
     if (this.section.secondLevel) {
       this.backLink = `posts({section: '${this.section.name}', cat: ''})`;

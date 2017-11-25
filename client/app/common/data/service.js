@@ -146,15 +146,15 @@ class DataService {
         let posts = resp.data.posts.map((p) => {
           const fldImage = _.get(p, 'custom_fields.dfiFeatured[0]');
           const m = fldImage && fldImage.match(/,(\/.*?)";/);
-          const kiosk_content = '<p>'+_.get(p, 'custom_fields.kiosk_content[0]', p.content)+'</p>';
+          const kiosk_content = _.get(p, 'custom_fields.kiosk_content', '').trim();
           return this._filterContent({
             id: p.id,
             title: p.title,
             content: kiosk_content.length && kiosk_content || p.content,
             thumbnail: p.thumbnail,
             custom_fields: p.custom_fields,
-            date: _.get(p, 'custom_fields.hwe_date[0]'),
-            location: _.get(p, 'custom_fields.location[0]'),
+            date: _.get(p, 'custom_fields.hwe_date'),
+            location: _.get(p, 'custom_fields.location'),
             titleImage: m && this.imgUrl + m[1]
           });
         });
@@ -173,7 +173,8 @@ class DataService {
     });
     let total = 0;
     let curProgress = 1;
-    return Promise.all(promises)
+    return Promise.all(promises);
+/*
       .then(() => {
         promises = [];
         progress(1, 20);
@@ -196,6 +197,7 @@ class DataService {
         });
         return Promise.all(promises);
       });
+*/
   }
 }
 

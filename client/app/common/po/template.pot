@@ -4,13 +4,29 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Project-Id-Version: \n"
 
+#: client/app/common/accessibility/accessibility.html:8
+msgid "Accessibility Menu is active. Turn on the headphones and/or select a profile from the list below."
+msgstr ""
+
+#: client/app/common/accessibility/accessibility.html:15
+msgid "Accessibility Statement"
+msgstr ""
+
 #: client/app/common/language/language.factory.js:10
 msgid "Backspace"
+msgstr ""
+
+#: client/app/common/accessibility/accessibility.html:12
+msgid "Color Contrast"
 msgstr ""
 
 #: client/app/components/home/home.html:23
 msgctxt "Noun"
 msgid "Contact"
+msgstr ""
+
+#: client/app/common/accessibility/accessibility.html:13
+msgid "Enlarged Fonts"
 msgstr ""
 
 #: client/app/common/language/language.factory.js:9
@@ -25,7 +41,7 @@ msgstr ""
 msgid "Press {{key}} for {{text}}."
 msgstr ""
 
-#: client/app/components/language/language.controller.js:12
+#: client/app/components/language/language.controller.js:13
 msgid "Welcome to Netanya!. For English press 1"
 msgstr ""
 

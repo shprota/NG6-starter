@@ -1,6 +1,6 @@
 <div
   class="main posts {{$ctrl.section.name}}"
-  ng-class="{contrast: $ctrl.isContrast, rtl: $ctrl.languageFactory.getLanguage() === 'he'}"
+  ng-class="{rtl: $ctrl.languageFactory.getLanguage() === 'he', contrast: $ctrl.abService.contrast, large: $ctrl.abService.large}"
   key-nav
 >
   <div class="left" ng-class="{cat: $ctrl.section.isCat}">
@@ -69,4 +69,5 @@
     </div>
   </div>
   <navbar backlink="{{$ctrl.backLink}}" dis="$ctrl.isContrast"></navbar>
+  <ab-menu></ab-menu>
 </div>

@@ -173,8 +173,7 @@ class DataService {
     });
     let total = 0;
     let curProgress = 1;
-    return Promise.all(promises);
-/*
+    return Promise.all(promises)
       .then(() => {
         promises = [];
         progress(1, 20);
@@ -197,7 +196,6 @@ class DataService {
         });
         return Promise.all(promises);
       });
-*/
   }
 }
 

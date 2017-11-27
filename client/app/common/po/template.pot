@@ -4,6 +4,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Project-Id-Version: \n"
 
+#: client/app/common/accessibility/accessibility.html:6
+msgid "Accessibility"
+msgstr ""
+
 #: client/app/common/accessibility/accessibility.html:8
 msgid "Accessibility Menu is active. Turn on the headphones and/or select a profile from the list below."
 msgstr ""

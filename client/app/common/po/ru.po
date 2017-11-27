@@ -11,33 +11,55 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.8.7.1\n"
 
+#: client/app/common/accessibility/accessibility.html:6
+msgid "Accessibility"
+msgstr "Режим доступности"
+
+#: client/app/common/accessibility/accessibility.html:8
+msgid ""
+"Accessibility Menu is active. Turn on the headphones and/or select a profile "
+"from the list below."
+msgstr ""
+"Меню доступности активизировано. Включите наушники и/или выберите профиль из "
+"списка настроек."
+
+#: client/app/common/accessibility/accessibility.html:15
+msgid "Accessibility Statement"
+msgstr "Описание доступности"
+
 #: client/app/common/language/language.factory.js:10
-#: client/app/common/navbar/navbar.html:4
 msgid "Backspace"
 msgstr "Backspace"
+
+#: client/app/common/accessibility/accessibility.html:12
+msgid "Color Contrast"
+msgstr "Контрастные цвета"
 
 #: client/app/components/home/home.html:23
 msgctxt "Noun"
 msgid "Contact"
 msgstr "Контакты"
 
+#: client/app/common/accessibility/accessibility.html:13
+msgid "Enlarged Fonts"
+msgstr "Увеличенные шрифты"
+
 #: client/app/common/language/language.factory.js:9
-#: client/app/common/navbar/navbar.html:10
 msgid "Enter"
 msgstr "Enter"
 
 #: client/app/common/language/language.factory.js:11
-#: client/app/common/navbar/navbar.html:7
 msgid "Escape"
 msgstr "Escape"
 
-#: client/app/common/language/language.factory.js:50
+#: client/app/common/language/language.factory.js:57
 msgid "Press {{key}} for {{text}}."
 msgstr "{{text}} нажмите {{key}}."
 
-#: client/app/components/language/language.controller.js:12
+#: client/app/components/language/language.controller.js:13
 msgid "Welcome to Netanya!. For English press 1"
-msgstr "Добро пожаловать в Нетанию!. Для получения информации русском языке нажмите 2"
+msgstr ""
+"Добро пожаловать в Нетанию!. Для получения информации русском языке нажмите 2"
 
 #: client/app/common/navbar/navbar.html:7
 msgid "language selection"

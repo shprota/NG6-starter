@@ -1,7 +1,7 @@
 import template from './accessibility.html';
 import './accessibility.scss';
 
-let Directive = function (abService) {
+let Directive = function (abService, $timeout) {
   'ngInject';
   let directive = {
     restrict: 'EAC',
@@ -25,9 +25,17 @@ let Directive = function (abService) {
     scope.toggleLarge = function() {
       scope.isShown = false;
       abService.large = !abService.large;
+      $timeout(() => {
+        let scrolls = $('.nicescroll');
+        scrolls.each((i, s) => {
+          let ns = $(s).getNiceScroll(0);
+          if (ns) {
+            ns.resize();
+          }
+        });
+      });
     }
   }
-
 };
 
 export default Directive;

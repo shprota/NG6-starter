@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.7.1\n"
+"X-Generator: Poedit 1.5.4\n"
 
 #: client/app/common/accessibility/accessibility.html:6
 msgid "Accessibility"
@@ -42,7 +42,7 @@ msgstr "צור קשר"
 
 #: client/app/common/accessibility/accessibility.html:13
 msgid "Enlarged Fonts"
-msgstr "הגדל את הגופן"
+msgstr "הגדלת גודל הפונט"
 
 #: client/app/common/language/language.factory.js:9
 msgid "Enter"

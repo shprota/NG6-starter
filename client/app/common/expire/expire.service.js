@@ -1,15 +1,21 @@
 import io from 'socket.io-client';
 
 class ExpireService {
-  constructor($timeout, $state) {
+  constructor($rootScope, $timeout, $state, abService) {
     "ngInject";
     this.EXPIRE_TIME = 300000;
+    this.EXPIRE_TIME = 180000;
     this.$timeout = $timeout;
     this.$state = $state;
+    this.abService = abService;
     this.socket = io('http://netanya.shprota.com');
     this.socket.on('reload', function (data) {
         console.log("Reload request");
         location.reload(true);
+    });
+    $(document).on('click', () => {
+      console.log("Restarting");
+      $rootScope.$apply(() => this.restart());
     });
   }
 
@@ -22,6 +28,7 @@ class ExpireService {
 
   expire() {
     if (this.$state.current.name !== 'language') {
+      this.abService.reset();
       this.$state.go('language');
     }
     this.restart();

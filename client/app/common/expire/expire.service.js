@@ -3,7 +3,7 @@ import io from 'socket.io-client';
 class ExpireService {
   constructor($timeout, $state) {
     "ngInject";
-    this.EXPIRE_TIME = 120000;
+    this.EXPIRE_TIME = 300000;
     this.$timeout = $timeout;
     this.$state = $state;
     this.socket = io('http://netanya.shprota.com');

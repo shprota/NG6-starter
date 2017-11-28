@@ -163,7 +163,8 @@ class DataService {
           title: resp.data.category.title,
           time: new Date
         };
-      });
+      })
+      .catch(e => null);
   }
 
   preload(progress) {

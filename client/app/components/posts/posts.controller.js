@@ -19,6 +19,26 @@ class PostsController {
     this.setCurrentContent = this._setCurrentContent.bind(this);
     this.backLink = 'home';
     this.isContrast = false;
+
+    this._decodeEntities = (function() {
+      // this prevents any overhead from creating the object each time
+      var element = document.createElement('div');
+
+      function decodeHTMLEntities (str) {
+        if(str && typeof str === 'string') {
+          // strip script/html tags
+          str = str.replace(/<script[^>]*>([\S\s]*?)<\/script>/gmi, '');
+          str = str.replace(/<\/?\w(?:[^"'>]|"[^"]*"|'[^']*')*>/gmi, '');
+          element.innerHTML = str;
+          str = element.textContent;
+          element.textContent = '';
+        }
+
+        return str;
+      }
+
+      return decodeHTMLEntities;
+    })();
   }
 
   $onInit() {
@@ -45,17 +65,19 @@ class PostsController {
 
 
   $postLink() {
-    $(this.$element).find('.main').focus();
+    //$(this.$element).find('.main').focus();
     this.$timeout(() => {
       $('.nicescroll').each((i, e) => {
         $(e).niceScroll({
           emulatetouch: true,
           cursorcolor: '#888',
-          autohidemode: false,
+          cursoropacitymin: 0,
+          cursoropacitymax: 0.6,
+          //autohidemode: false,
           bouncescroll: true,
           cursordragontouch: true,
           preventmultitouchscrolling: false,
-          cursorwidth: 10,
+          //cursorwidth: 10,
           preservenativescrolling: false,
           nativeparentscrolling: false,
           horizrailenabled: false,
@@ -68,6 +90,13 @@ class PostsController {
 */
         });
         $(e).imagesLoaded().always(this.imagesLoaded.bind(this));
+        $('#menu-container').focus();
+        $(this.$element).on('keydown', (e) => {
+          if (e.key === '.') {
+            this.$rootScope.$apply(() => this.showItem = false);
+          }
+        });
+
       });
     });
   }
@@ -108,7 +137,6 @@ class PostsController {
     }
   }
 
-
   _setCurrentContent(ev, post) {
     post = post || ev;
     //let ns = $('.right .inner').getNiceScroll(0);
@@ -128,13 +156,19 @@ class PostsController {
     });
 
     this.$timeout(() => {
-      this.languageFactory.say(post.content.replace(/<[^>]+>/gm, ''));
+      this.languageFactory.say(this._decodeEntities(post.title + '.' + post.content));
     }, 300);
 
   }
 
   loadCat(cat) {
     this.$state.go('.', {section: this.section.name, cat: cat});
+  }
+
+  formatIndex(idx) {
+    let navLen = (''+(this.posts.length-1)).length;
+    let k = '' + idx;
+    return '0'.repeat(navLen - k.length) + k;
   }
 }
 

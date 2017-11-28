@@ -177,7 +177,7 @@
         li a {
           display: inline-block;
           vertical-align: middle;
-          width: 210px;
+          width: 200px;
         }
       }
     }
@@ -213,8 +213,8 @@
         }
       }
     }
-    p, .postcontent p {
-      font-size: 150%;
+    p, .postcontent * {
+      font-size: 180%;
     }
     .inner .date {
       font-size: 34px;
@@ -223,11 +223,13 @@
 }
 
 ul.leftmenu {
-  border-top: 1px solid #fff;
   margin-top: 22px;
   position: relative;
   //overflow: hidden;
   li {
+    &:first-child {
+      border-top: 1px solid #fff;
+    }
     border-bottom: 1px solid #fff;
     &:hover, &.selected {
       background-color: rgba(0, 0, 0, .2);
@@ -240,7 +242,7 @@ ul.leftmenu {
       font-size: 19px;
       display: inline-block;
       vertical-align: middle;
-      width: 210px;
+      width: 200px;
       text-align: left;
       padding: 25px 0;
     }
@@ -252,13 +254,25 @@ ul.leftmenu {
       z-index: 1;
       vertical-align: middle;
     }
-    span.infomenu {
-      width: 30px;
-      height: 30px;
+    .infomenu {
+      width: 35px;
+      height: 35px;
+      /*
       background-image: url(/images/sprites.png);
       background-position: -185px -343px;
+      */
       display: inline-block;
       vertical-align: middle;
+      background-color: white;
+      -webkit-border-radius: 16px;
+      -moz-border-radius: 16px;
+      border-radius: 16px;
+      .iminner {
+        text-align: center;
+        padding-top: 10px;
+        font-weight: bold;
+        color: #333;
+      }
     }
     span.white {
       display: block;
@@ -370,6 +384,7 @@ img.title-image {
 
 .rtl ul.leftmenu li a {
   text-align: right;
+  width: 200px;
 }
 
 .rtl ul.leftmenu li img {

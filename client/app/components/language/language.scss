@@ -47,10 +47,32 @@
           background-color: rgba(255, 255, 255, .2);
           background-image: url('/images/sprites.png');
         }
+        &:after {
+          content: "";
+          width: 60px;
+          height: 60px;
+          border-radius: 50%;
+          display: block;
+          position: absolute;
+          top: 118px;
+          right: 45px;
+          background: #fff;
+          text-align: center;
+          color: #003369;
+          font-size: 36px;
+          font-weight: bold;
+          box-sizing: border-box;
+          padding-top: 14px;
+        }
       }
       &:nth-child(1) {
-        a:before {
-          background-position: -195px -164px;
+        a {
+          &:before {
+            background-position: -195px -164px;
+          }
+          &:after {
+            content: "1";
+          }
         }
         &:hover a:before {
           background-color: #014398;
@@ -63,6 +85,9 @@
           &:before {
             background-position: -387px -164px;
           }
+          &:after {
+            content: "2";
+          }
         }
         &:hover a:before {
           background-color: #024b90;
@@ -72,6 +97,9 @@
         a:before {
           background-position: -598px -164px;
         }
+        a:after {
+            content: "3";
+        }
         &:hover a:before {
           background-color: #004499;
         }
@@ -80,6 +108,10 @@
       &:nth-child(4) {
         a:before {
           background-position: -813px -164px;
+        }
+        a:after {
+            content: "4";
+            font-family: "Open Sans", sans-serif;
         }
         &:hover a:before {
           background-color: #004ea5;

@@ -4,7 +4,6 @@ class ExpireService {
   constructor($rootScope, $timeout, $state, abService) {
     "ngInject";
     this.EXPIRE_TIME = 300000;
-    this.EXPIRE_TIME = 180000;
     this.$timeout = $timeout;
     this.$state = $state;
     this.abService = abService;

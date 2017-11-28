@@ -12,6 +12,7 @@ let Directive = function (abService, $timeout) {
 
   function link(scope, el) {
     scope.isShown = false;
+    scope.abService = abService;
 
     scope.showAb = function(show = true) {
       //scope.$apply("isShown="+show);

@@ -9,8 +9,8 @@
     </div>
     <div class="abinner">
       <ul class="ab-list">
-        <li><a href="" translate="" ng-click="toggleContrast()">Color Contrast</a></li>
-        <li><a href="" translate="" ng-click="toggleLarge()">Enlarged Fonts</a></li>
+        <li ng-class="{selected: abService.contrast}"><a href="" translate="" ng-click="toggleContrast()">Color Contrast</a></li>
+        <li ng-class="{selected: abService.large}"><a href="" translate="" ng-click="toggleLarge()">Enlarged Fonts</a></li>
       </ul>
       <a href="" class="ab-statement" translate="">Accessibility Statement</a>
     </div>

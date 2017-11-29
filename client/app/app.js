@@ -34,6 +34,7 @@ angular.module('app', [
     languageFactory.stop();
     expireService.restart();
     $transitions.onStart({}, trans => {
+      languageFactory.stop();
       expireService.restart();
       trans.promise.catch(e => {
         trans.router.stateService.go('language');

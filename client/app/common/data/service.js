@@ -143,7 +143,8 @@ class DataService {
     return this.$http.get(this.wpUrl + `/?cat=${cat}&json=1&lang=${lang}&count=${count}`)
       .then(resp => {
         //resp.data.posts.forEach(this._filterContent);
-        let posts = resp.data.posts.map((p) => {
+        let posts = resp.data.posts.filter(p => !_.get(p, 'custom_fields.hide_in_kiosk', false));
+        posts = posts.map((p) => {
           const fldImage = _.get(p, 'custom_fields.dfiFeatured[0]');
           const m = fldImage && fldImage.match(/,(\/.*?)";/);
           const kiosk_content = _.get(p, 'custom_fields.kiosk_content', '').trim();

@@ -48,8 +48,8 @@ class LanguageFactory {
   }
 
   stop() {
-    if (this.ttsClient && this.ttsClient.stop) {
-      this.ttsClient.stop();
+    if (this.ttsClient && this.ttsClient.Stop) {
+      this.ttsClient.Stop();
     }
   }
 

@@ -17,7 +17,9 @@ class PostsController {
     this.abService = abService;
     $window.scrollTo(0, 0);
     this.setCurrentContent = this._setCurrentContent.bind(this);
+    this.goBack = this._goBack.bind(this);
     this.backLink = 'home';
+    this.backParams = {};
     this.isContrast = false;
 
     this._decodeEntities = (function() {
@@ -54,7 +56,8 @@ class PostsController {
       this.locations = this.posts.filter(p => p.location && p.location.length);
     }
     if (this.section.secondLevel) {
-      this.backLink = `posts({section: '${this.section.name}', cat: ''})`;
+      this.backLink = `posts`;
+      this.backParams = {section: this.section.name, cat: ''};
     }
     if (this.section.name !== 'news') {
       this.NgMap.getMap().then(() => {
@@ -91,12 +94,6 @@ class PostsController {
         });
         $(e).imagesLoaded().always(this.imagesLoaded.bind(this));
         $('#menu-container').focus();
-        $(this.$element).on('keydown', (e) => {
-          if (e.key === '.') {
-            this.$rootScope.$apply(() => this.showItem = false);
-          }
-        });
-
       });
     });
   }
@@ -165,8 +162,16 @@ class PostsController {
     this.$state.go('.', {section: this.section.name, cat: cat});
   }
 
+  _goBack() {
+    if (this.showItem) {
+      this.showItem = false;
+    } else {
+      this.$state.go(this.backLink, this.backParams);
+    }
+  }
+
   formatIndex(idx) {
-    let navLen = (''+(this.posts.length-1)).length;
+    let navLen = (''+(this.posts.length)).length;
     let k = '' + idx;
     return '0'.repeat(navLen - k.length) + k;
   }

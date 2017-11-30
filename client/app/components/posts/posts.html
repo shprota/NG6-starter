@@ -14,16 +14,16 @@
             class="post"
             ng-class="{selected: $ctrl.post.id === post.id}"
             ng-if="!$ctrl.section.isCat"
-            nav-item="$index"
+            nav-item="$index+1"
         >
           <img class="menuimage" ng-src="{{post.thumbnail}}"/>
           <a href="#" ><span class="white" ng-bind="post.date" ng-if="$ctrl.section.name === 'news'"></span> <span ng-bind-html="post.title"></span></a>
-          <div class="infomenu"><div class="iminner" ng-bind="$ctrl.formatIndex($index)"></div></div>
+          <div class="infomenu"><div class="iminner" ng-bind="$ctrl.formatIndex($index+1)"></div></div>
         </li>
         <li ng-repeat="cat in $ctrl.posts"
             class="cat"
             ng-if="$ctrl.section.isCat">
-                  <a href="" ng-bind-html="$index + '. ' + cat.title" ng-click="$ctrl.loadCat(cat.id)" nav-item="$index"></a>
+                  <a href="" ng-bind-html="($index+1) + '. ' + cat.title" ng-click="$ctrl.loadCat(cat.id)" nav-item="$index+1"></a>
         </li>
       </ul>
     </div>
@@ -68,6 +68,6 @@
       </div>
     </div>
   </div>
-  <navbar backlink="{{$ctrl.backLink}}" dis="$ctrl.isContrast"></navbar>
+  <navbar backlink="$ctrl.goBack" dis="$ctrl.isContrast"></navbar>
   <ab-menu></ab-menu>
 </div>

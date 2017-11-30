@@ -13,7 +13,6 @@ class ExpireService {
         location.reload(true);
     });
     $(document).on('click', () => {
-      console.log("Restarting");
       $rootScope.$apply(() => this.restart());
     });
   }

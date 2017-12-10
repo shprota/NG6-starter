@@ -86,14 +86,11 @@ class PostsController {
           horizrailenabled: false,
           oneaxismousemode: false,
           railalign: this.languageFactory.getLanguage() === 'he' ? 'left' : 'right',
-/*
-          railoffset: {
-            left: -10
-          }
-*/
         });
         $(e).imagesLoaded().always(this.imagesLoaded.bind(this));
         $('#menu-container').focus();
+        $('body').scrollTop(0);
+        $(document).scrollTop(0);
       });
     });
   }

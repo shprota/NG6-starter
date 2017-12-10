@@ -1,5 +1,8 @@
 .hotels, .hotels .info {
   background-image: url('/images/backhotels.png');
+  .iminner {
+    color: #003b83;
+  }
 }
 
 .hotels.rtl, .hotels.rtl .info {
@@ -14,6 +17,9 @@
 
 .holiday, .holiday .info {
   background-image: url('/images/backholiday.png');
+  .iminner {
+    color: #e26c08;
+  }
 }
 
 .holiday.rtl, .holiday.rtl .info {
@@ -33,6 +39,9 @@
 
 .surroundings, .surroundings .info {
   background-image: url('/images/backsurrounds.png');
+  .iminner {
+    color: #1b7e84;
+  }
 }
 
 .surroundings .left .define {
@@ -47,6 +56,9 @@
 
 .enjoying, .enjoying .info {
   background-image: url('/images/backenjoying.png');
+  .iminner {
+    color: #1b6d84;
+  }
 }
 
 .enjoying .left .define {
@@ -67,6 +79,9 @@
   background: -webkit-linear-gradient(45deg,  #d65200 0%,#ee3543 100%); /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(45deg,  #d65200 0%,#ee3543 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d65200', endColorstr='#ee3543',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+  .iminner {
+    color: #ee3543;
+  }
 
   .define {
     //background-color: #f1505f;
@@ -255,8 +270,8 @@ ul.leftmenu {
       vertical-align: middle;
     }
     .infomenu {
-      width: 35px;
-      height: 35px;
+      width: 27px;
+      height: 27px;
       /*
       background-image: url(/images/sprites.png);
       background-position: -185px -343px;
@@ -264,14 +279,15 @@ ul.leftmenu {
       display: inline-block;
       vertical-align: middle;
       background-color: white;
-      -webkit-border-radius: 16px;
-      -moz-border-radius: 16px;
-      border-radius: 16px;
+      -webkit-border-radius: 14px;
+      -moz-border-radius: 14px;
+      border-radius: 14px;
       .iminner {
         text-align: center;
-        padding-top: 10px;
+        padding-top: 6px;
+        font-size: 15px;
         font-weight: bold;
-        color: #333;
+        margin-left: -1px;
       }
     }
     span.white {

@@ -3,6 +3,7 @@
 
 /* leaving animations ----------------------------------------- */
 /* rotate and fall */
+/*
 @keyframes rotateFall {
     0%      { transform: rotateZ(0deg); }
     20%     { transform: rotateZ(10deg); animation-timing-function: ease-out; }
@@ -10,6 +11,7 @@
     60%     { transform: rotateZ(16deg); }
     100%    { transform: translateY(100%) rotateZ(17deg); }
 }
+*/
 
 /* slide in from the bottom */
 @keyframes slideOutLeft {
@@ -17,15 +19,19 @@
 }
 
 /* rotate out newspaper */
+/*
 @keyframes rotateOutNewspaper {
     to      { transform: translateZ(-3000px) rotateZ(360deg); opacity: 0; }
 }
+*/
 
 /* entering animations --------------------------------------- */
 /* scale up */
+/*
 @keyframes scaleUp {
     from    { opacity: 0.3; -webkit-transform: scale(0.8); }
 }
+*/
 
 /* slide in from the right */
 @keyframes slideInRight {
@@ -34,10 +40,12 @@
 }
 
 /* slide in from the bottom */
+/*
 @keyframes slideInUp {
     from    { transform:translateY(100%); }
     to      { transform: translateY(0); }
 }
+*/
 
 
 .ng-enter { animation: slideInRight 0.3s both ease-in; z-index: 8888; }

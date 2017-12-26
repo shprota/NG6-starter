@@ -14,7 +14,7 @@ let Directive = function (abService, $timeout) {
     scope.isShown = false;
     scope.abService = abService;
 
-    scope.showAb = function(show = true) {
+    scope.showExpire = function(show = true) {
       //scope.$apply("isShown="+show);
       scope.isShown = show;
     };

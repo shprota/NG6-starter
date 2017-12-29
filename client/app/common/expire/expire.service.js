@@ -3,6 +3,7 @@ import io from 'socket.io-client';
 class ExpireService {
   constructor($rootScope, $timeout, $state, abService) {
     "ngInject";
+    this.$rootScope = $rootScope;
     this.EXPIRE_TIME = 300000;
     this.$timeout = $timeout;
     this.$state = $state;
@@ -12,9 +13,13 @@ class ExpireService {
         console.log("Reload request");
         location.reload(true);
     });
-    $(document).on('click', () => {
+
+    let onUserEvent = () => {
       $rootScope.$apply(() => this.restart());
-    });
+    };
+
+    $(document).on('click', onUserEvent);
+    $(document).on('keydown', onUserEvent);
   }
 
   restart() {
@@ -26,10 +31,8 @@ class ExpireService {
 
   expire() {
     if (this.$state.current.name !== 'language') {
-      this.abService.reset();
-      this.$state.go('language');
+      this.$rootScope.showExpire(true);
     }
-    this.restart();
   }
 }
 

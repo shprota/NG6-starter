@@ -10,6 +10,7 @@ import Components from './components/components';
 import AppComponent from './app.component';
 import ngSanitize from 'angular-sanitize';
 import tts from './common/tts';
+import ga from 'angular-google-analytics';
 
 angular.module('app', [
     uiRouter,
@@ -21,15 +22,24 @@ angular.module('app', [
     tts,
     'gettext',
     ngTouch,
+    ga
   ])
-  .config(($locationProvider/*, lazyImgConfigProvider*/) => {
+  .config(($locationProvider, AnalyticsProvider) => {
     "ngInject";
     ImagesLoaded.makeJQueryPlugin($);
     // @see: https://github.com/angular-ui/ui-router/wiki/Frequently-Asked-Questions
     // #how-to-configure-your-server-to-work-with-html5mode
     $locationProvider.html5Mode(true).hashPrefix('!');
+    AnalyticsProvider.setAccount('UA-16102077-2');
+    AnalyticsProvider
+      .logAllCalls(true)
+      .useDisplayFeatures(true)
+      .useEnhancedLinkAttribution(true)
+      .trackUrlParams(true)
+      .trackPrefix('kiosk')
+      .setPageEvent('$stateChangeSuccess')
   })
-  .run(($transitions, expireService, languageFactory) => {
+  .run(($transitions, expireService, languageFactory, Analytics) => {
     "ngInject";
     languageFactory.stop();
     expireService.restart();

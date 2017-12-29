@@ -11,6 +11,7 @@
       <ul class="leftmenu">
         <li ng-repeat="post in $ctrl.posts track by $index"
             ng-click="$ctrl.setCurrentContent(post)"
+            ga-track-event="['item', 'open', post.title]"
             class="post"
             ng-class="{selected: $ctrl.post.id === post.id}"
             ng-if="!$ctrl.section.isCat"

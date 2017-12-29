@@ -27,6 +27,15 @@ msgstr ""
 msgid "Accessibility Statement"
 msgstr "הצהרת נגישות"
 
+#: client/app/common/expire/expire.html:7
+msgid ""
+"After a few minutes the site will return to the default screen, to continue "
+"navigating the site, touch the screen or press the green button on the "
+"keyboard."
+msgstr ""
+"תוך זמן קצר אתר יחזור למסך הראשי, להמשך גלישה יש לגעת במסך או ללחוץ על "
+"הכפתור ירוק \"אישור\" במקלדת"
+
 #: client/app/common/language/language.factory.js:10
 msgid "Backspace"
 msgstr "תיקון"
@@ -51,6 +60,13 @@ msgstr "אישור"
 #: client/app/common/language/language.factory.js:11
 msgid "Escape"
 msgstr "ביטול"
+
+#: client/app/components/language/language.html:34
+msgid ""
+"Navigate with keyboard: Press [ENTER, green button]  to open Accessibility "
+"Menu, press [EDIT, yellow button] to go back, press [DELETE, red button] to "
+"go back."
+msgstr ""
 
 #: client/app/common/language/language.factory.js:57
 msgid "Press {{key}} for {{text}}."

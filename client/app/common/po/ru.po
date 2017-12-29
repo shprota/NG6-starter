@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.7.1\n"
+"X-Generator: Poedit 1.5.4\n"
 
 #: client/app/common/accessibility/accessibility.html:6
 msgid "Accessibility"
@@ -26,6 +26,15 @@ msgstr ""
 #: client/app/common/accessibility/accessibility.html:15
 msgid "Accessibility Statement"
 msgstr "Описание доступности"
+
+#: client/app/common/expire/expire.html:7
+msgid ""
+"After a few minutes the site will return to the default screen, to continue "
+"navigating the site, touch the screen or press the green button on the "
+"keyboard."
+msgstr ""
+"Через несколько минут сайт вернется на главный экран, для продолжения "
+"навигации коснитесь экрана или нажмите на зеленую кнопку на клавиатуре."
 
 #: client/app/common/language/language.factory.js:10
 msgid "Backspace"
@@ -51,6 +60,13 @@ msgstr "Enter"
 #: client/app/common/language/language.factory.js:11
 msgid "Escape"
 msgstr "Escape"
+
+#: client/app/components/language/language.html:34
+msgid ""
+"Navigate with keyboard: Press [ENTER, green button]  to open Accessibility "
+"Menu, press [EDIT, yellow button] to go back, press [DELETE, red button] to "
+"go back."
+msgstr ""
 
 #: client/app/common/language/language.factory.js:57
 msgid "Press {{key}} for {{text}}."

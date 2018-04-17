@@ -51,7 +51,7 @@ angular.module('app', [
       });
     });
   })
-  .constant('wpUrl', 'http://gonetanya.com')
+  .constant('wpUrl', '//gonetanya.com')
   .constant('mapsUrl', 'https://maps.google.com/maps/api/js?key=AIzaSyDHVHOiHjXhgl8Zz3GTwkZVgm8HCNRG3fc')
   .constant('homeCats', {
     news: 66,

@@ -1,4 +1,4 @@
-import io from 'socket.io-client';
+// import io from 'socket.io-client';
 
 class ExpireService {
   constructor($rootScope, $timeout, $state, abService) {
@@ -8,11 +8,13 @@ class ExpireService {
     this.$timeout = $timeout;
     this.$state = $state;
     this.abService = abService;
+/*
     this.socket = io('http://netanya.shprota.com');
     this.socket.on('reload', function (data) {
         console.log("Reload request");
         location.reload(true);
     });
+*/
 
     let onUserEvent = () => {
       $rootScope.$apply(() => this.restart());

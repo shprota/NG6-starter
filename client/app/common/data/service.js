@@ -152,7 +152,7 @@ class DataService {
             id: p.id,
             title: p.title,
             content: kiosk_content.length && kiosk_content || p.content,
-            thumbnail: p.thumbnail,
+            thumbnail: p.thumbnail, //.replace(/^https?:/, ''),
             custom_fields: p.custom_fields,
             date: _.get(p, 'custom_fields.hwe_date'),
             location: _.get(p, 'custom_fields.location'),
